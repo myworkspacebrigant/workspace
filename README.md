@@ -1,1 +1,1 @@
-# workspace
+V9 conservée avec discussion et dictée dans l’icône Michel existante. Ajout d’un bouton Démarrer conversation vocale dans la même fenêtre : reconnaissance de la parole, historique, réponse orale de navigation locale et reprise de l’écoute si le navigateur le permet. Ce n’est pas une IA conversationnelle connectée. Menu UNIVERS supprimé et motion.html retiré. Pour le microphone : HTTPS ou localhost et navigateur compatible.
