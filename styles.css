@@ -80,3 +80,5 @@ input[type=checkbox]{accent-color:#26e1f7}
 
 /* Arborescence BRIG */
 .brig-folders{display:grid;gap:9px;margin-top:16px}.brig-folder{border:1px solid #28778a88;border-radius:10px;background:#081d2b;padding:0 13px}.brig-folder summary{cursor:pointer;padding:13px 3px;color:#c5f3ff;font-weight:600;list-style:none}.brig-folder summary::-webkit-details-marker{display:none}.brig-folder[open] summary{border-bottom:1px solid #28778a66}.brig-children{display:grid;gap:11px;padding:14px 8px 17px 24px;color:#b3d0db}
+
+.brig-folders{display:grid;gap:9px;margin-top:16px}.brig-folder{border:1px solid #28778a88;border-radius:10px;background:#081d2b;padding:0 13px}.brig-folder summary{cursor:pointer;padding:13px 3px;color:#c5f3ff;font-weight:600;list-style:none}.brig-folder[open] summary{border-bottom:1px solid #28778a66}.brig-children{display:grid;gap:11px;padding:14px 8px 17px 24px;color:#b3d0db}
