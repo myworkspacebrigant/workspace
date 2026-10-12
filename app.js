@@ -20,6 +20,7 @@ if(view==='brig'){
 const menus={formation:['Programmes','Sessions','Participants','Supports','Évaluations','Certifications'],copilot:['Diagnostic','Finance','Stratégie','Plan d’action','Livrables','Suivi']};
 const current=menus[brigSection]||[];
 html=header('BRIG','')+notice+`<div class="grid two">${card('FORMATION','','◈','brig:formation')}${card('COPILOT','','◎','brig:copilot')}</div>`;
+html+=`<div class="section"><h2>Documents OneDrive</h2></div><div class="card"><div class="icon">☁️</div><h3>Consulting</h3><p>Documents conservés sur OneDrive. Connexion Microsoft et autorisations requises.</p><a class="btn" href="https://1drv.ms/f/c/07ea1b8a4a471ab3/IgAq0cefwJFLQLxSJoPRSoFXAQfNlM9wBinElHvBilcnRaI?e=fbLmaG" target="_blank" rel="noopener noreferrer">Ouvrir le dossier Consulting ↗</a></div>`;
 if(brigSection!=='hub'){
 html+=`<div class="section"><h2>${brigSection.toUpperCase()}</h2><button class="btn alt" data-go="brig:hub">← BRIG</button></div><div class="grid">${current.map((x,i)=>card(x,'',i%2?'◉':'⬡','brigsub:'+i)).join('')}</div>`;
 if(brigSub)html+=`<div class="section"><h2>${esc(brigSub)}</h2></div><div class="card"><div class="toolbar"><button class="btn" data-act="addtask">+ Tâche</button>${brigSection==='copilot'?'<button class="btn" data-go="agent:0">Agents</button>':''}</div></div>`+taskBlock('brig');
