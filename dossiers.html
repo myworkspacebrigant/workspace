@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10283a"><title>Dossiers et outils · Workspace</title>
+<style>
+:root{font-family:system-ui,"Segoe UI",sans-serif;color:#e7f4fb;background:#071522}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 95% 0,#143d50,transparent 43%),#071522;min-height:100vh}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
+.shell{max-width:1050px;margin:auto;padding:20px 18px 100px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.brand{font-weight:800;letter-spacing:.12em;font-size:14px}.muted{color:#9bb8c9;font-size:14px;line-height:1.55}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:#166a72;color:white;border:1px solid #48aeb0;border-radius:11px;font-weight:650;min-height:44px;max-width:100%}
+.btn:hover,.btn:focus-visible{background:#22808b;outline:2px solid #8aebef;outline-offset:2px}
+.btn.alt{background:#162d40;border-color:#45677b}.btn.ghost{background:transparent;border-color:#38586b}.btn[disabled]{opacity:.5;cursor:not-allowed}
+h1{font-size:clamp(25px,4vw,37px);line-height:1.2;margin:8px 0}h2{font-size:17px;margin:4px 0 12px}h3{font-size:16px;margin:0 0 7px}
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;color:#aad6e5;margin-bottom:22px}
+.crumbs a{padding:7px 10px;border:1px solid #365467;border-radius:8px}.crumbs strong{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:13px;margin:14px 0 25px}
+.folder{display:flex;flex-direction:column;gap:7px;justify-content:center;min-height:92px;background:#0c2637;border:1px solid #31596b;border-radius:13px;padding:16px}
+.folder:hover,.folder:focus-visible{background:#144051;border-color:#54c8d0}.folder small{color:#93b4c7;font-size:12px}
+.panel{border:1px solid #355a6a;background:#0d2736;border-radius:15px;padding:20px;margin:18px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}
+label{display:block;font-size:13px;font-weight:650;margin-bottom:8px}
+input[type=url]{width:100%;padding:12px;border-radius:9px;border:1px solid #6b95a3;background:#061824;color:#fff;min-height:45px}
+.note{border-left:3px solid #75c3cc;padding:11px 13px;background:#123244;font-size:13px;line-height:1.5;color:#d6ebf3;margin:14px 0}
+.warning{border-left-color:#efbb68}.status{font-size:13px;color:#b7dbe7;min-height:18px}
+footer{margin-top:40px;border-top:1px solid #315366;padding-top:16px;color:#93afc0;font-size:12px}
+@media(max-width:520px){.btn{width:100%}.panel{padding:15px}.shell{padding:16px 12px 80px}}
+</style>
+</head><body><main class="shell">
+<header class="head"><div class="brand">◈ WORKSPACE <span style="color:#80c9d3">/ DOSSIERS ET OUTILS</span></div><nav class="actions"><a class="btn alt" href="index.html">← Bureau</a><a class="btn alt" href="neural.html">◉ NEURAL</a><a class="btn alt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Michel · ChatGPT ↗</a></nav></header>
+<div id="bread" class="crumbs"></div><div id="content"></div>
+<footer>V18 · Répertoire de navigation. Le site ne lit pas les fichiers ni les comptes privés. Aucun identifiant n'est conservé dans GitHub.</footer>
+</main>
+<script>
+'use strict';
+const leaf=()=>({});
+const make=(names)=>Object.fromEntries(names.map(n=>[n,leaf()]));
+const restos=['La Cabane','Les Barrés','Le Vagabond','Le Mille Pâtes','Giuseppe','Kanapech'];
+const restoFolders=Object.fromEntries(restos.map(n=>[n,{
+'Documents':leaf(),'Comptabilité':leaf(),'RH':leaf(),'Planning':leaf(),'Avis clients':{'Avis Google':leaf(),'Tripadvisor':leaf()},
+'Réseaux sociaux':{'Facebook':leaf(),'Instagram':leaf()},'Rapports':leaf(),'Entretien et maintenance':leaf()
+}]));
+const TREE={
+'BRIG':{
+'Formation':make(['Programmes','Sessions','Participants','Supports','Évaluations','Certifications']),
+'Copilot':make(['Diagnostic','Finance','Stratégie','Plan d’action','Livrables','Suivi de mission']),
+'Documents':make(['Clients','Missions','Propositions commerciales','Livrables'])
+},
+'YOLO GROUP':{
+'Pilotage':{
+'Administration':{'Zeendoc':leaf(),'Agent Benou':leaf(),'Documents administratifs':leaf()},
+'Compta':{'Suivi activité quotidienne':leaf(),'Factures':leaf(),'Documents comptables':leaf()},
+'Équipes et communication':{'Yolo Heures':leaf(),'Messagerie':leaf(),'Plannings':leaf()},
+'RH':make(['Candidatures','Contrats','Suivi des équipes']),
+'Réseaux sociaux':{'Facebook':leaf(),'Instagram':leaf(),'Supports de communication':leaf()},
+'Avis clients':{'Avis Google':leaf(),'Tripadvisor':leaf(),'Bilans mensuels':leaf()},
+'Rapports':make(['Rapports restaurants','Suivi de performance']),
+'Agents':{'Super Agent':leaf(),'RH YOLO':leaf(),'Compta YOLO':leaf(),'Agent Maintenance Workspace':leaf(),'Agent Créa':leaf(),'Nouveautés IA':leaf()}
+},
+'Établissements':restoFolders,
+'AGH':{'Administration':leaf(),'Comptabilité':leaf(),'Catalogue':leaf(),'Tarifs':leaf(),'Fournisseurs':leaf(),'Commandes':leaf(),'Commercial':leaf(),'Documents':leaf()}
+},
+'IMMO':{'SCI LA SAMIPIERE':make(['Documents','Administration','Gestion locative']),'YOLO IMMO':make(['Documents','Administration','Gestion locative'])}
+};
+const TOOLS={
+'Zeendoc':['Zeendoc','https://www.zeendoc.com/'],
+'Agent Benou':['Agent Benou','https://agent-benou.benjamin-4fb.workers.dev/'],
+'Yolo Heures':['Yolo Heures','https://yolo-heures-v2.benjamin-4fb.workers.dev/'],
+'Messagerie':['Gmail','https://mail.google.com/'],
+'Facebook':['Facebook','https://www.facebook.com/'],
+'Instagram':['Instagram','https://www.instagram.com/'],
+'Avis Google':['Google Business / avis','https://business.google.com/'],
+'Tripadvisor':['Tripadvisor / gestion des avis','https://www.tripadvisor.fr/Owners'],
+'Super Agent':['Page Super Agent Workspace','super-agent.html'],
+'RH YOLO':['Page RH Workspace','rh-yolo.html'],
+'Compta YOLO':['Page Comptabilité Workspace','index.html'],
+'Agent Maintenance Workspace':['ChatGPT','https://chatgpt.com/'],
+'Agent Créa':['ChatGPT','https://chatgpt.com/'],
+'Nouveautés IA':['ChatGPT','https://chatgpt.com/']
+};
+const KEY='workspace-v18-folder-links';
+let saved={};try{const v=JSON.parse(localStorage.getItem(KEY)||'{}');if(v&&typeof v==='object'&&!Array.isArray(v))saved=v;}catch(e){}
+const params=new URLSearchParams(location.search);
+const p=(params.get('p')||'').split('/').map(s=>s.trim()).filter(Boolean);
+function nodeFor(parts){let cur=TREE;for(const name of parts){if(!cur||!Object.prototype.hasOwnProperty.call(cur,name))return null;cur=cur[name]}return cur;}
+const parts=nodeFor(p)!==null?p:[];
+const urlFor=(a)=>'dossiers.html'+(a.length?'?p='+encodeURIComponent(a.join('/')):'');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeURL=u=>{try{const x=new URL(u);if(x.protocol!=='https:'||x.username||x.password)return false;const forbidden=/^(token|access_token|refresh_token|auth|authorization|apikey|api_key|key|secret|signature|sig|t)$/i;for(const k of x.searchParams.keys())if(forbidden.test(k))return false;return true}catch(e){return false}};
+const pathKey=parts.join('/');
+const current=nodeFor(parts)||TREE;
+const children=Object.keys(current);
+const title=parts.at(-1)||'Mes espaces';
+document.title=title+' · Dossiers Workspace';
+const crumb=document.getElementById('bread');
+crumb.innerHTML='<a href="dossiers.html">WORKSPACE</a>'+parts.map((name,i)=>'<span>›</span><a href="'+esc(urlFor(parts.slice(0,i+1)))+'">'+esc(name)+'</a>').join('');
+let html='<h1>'+esc(title)+'</h1><p class="muted">Toutes les branches débouchent sur un outil ou sur un accès aux documents OneDrive. Les liens privés précis sont à configurer une seule fois sur cet appareil.</p>';
+if(children.length)html+='<h2>Sous-dossiers</h2><section class="grid">'+children.map(name=>'<a class="folder" href="'+esc(urlFor([...parts,name]))+'"><strong>📁 '+esc(name)+'</strong><small>'+ (Object.keys(current[name]).length?'Ouvrir les sous-dossiers':'Ouvrir la destination') +' →</small></a>').join('')+'</section>';
+const tool=TOOLS[title]||null;
+if(tool&&!children.length){
+const target=tool[1].startsWith('https://')?' target="_blank" rel="noopener noreferrer"':'';
+html+='<section class="panel"><h2>Outil professionnel</h2><p class="muted">Accès direct à '+esc(tool[0])+'. La connexion se fait sur le site officiel et dépend de ton compte.</p><div class="actions"><a class="btn" href="'+esc(tool[1])+'"'+target+'>↗ Ouvrir '+esc(tool[0])+'</a></div></section>';
+}
+const folderURL=saved[pathKey]&&safeURL(saved[pathKey])?saved[pathKey]:'';
+html+='<section class="panel"><h2>📁 Dossier documentaire OneDrive</h2>'+
+(folderURL?'<p class="muted">Lien de dossier personnalisé, conservé uniquement dans ce navigateur.</p>':'<p class="muted">Aucun lien de dossier précis enregistré ici. OneDrive s’ouvre sur ton espace général tant que tu n’as pas renseigné le lien de ce dossier.</p>')+
+'<div class="actions"><a class="btn" href="'+esc(folderURL||'https://onedrive.live.com/my')+'" target="_blank" rel="noopener noreferrer">'+(folderURL?'↗ Ouvrir ce dossier OneDrive':'↗ Ouvrir mon OneDrive')+'</a></div>'+
+'<div class="note">Pour obtenir un lien direct : ouvre ton dossier dans OneDrive connecté à ton compte, puis copie son adresse HTTPS dans le champ ci-dessous. Le dossier et ses fichiers restent sur OneDrive. Évite les liens de partage donnant accès sans connexion.</div>'+
+'<form id="form"><label for="folderurl">Adresse du dossier OneDrive ou SharePoint (sans mot de passe ni jeton)</label><input id="folderurl" type="url" placeholder="https://onedrive.live.com/..." value="'+esc(folderURL)+'" autocomplete="off"><div class="actions"><button class="btn alt" type="submit">Enregistrer sur cet appareil</button><button class="btn ghost" type="button" id="remove">Effacer ce lien</button></div><p id="status" class="status" role="status"></p></form></section>';
+if(!parts.length)html+='<div class="note warning">Important : ce site GitHub est public. N’y publie jamais de données RH, financières, de mot de passe, de lien à jeton ni de lien de partage permettant un accès anonyme. Le répertoire ne constitue pas une connexion automatique OneDrive.</div>';
+document.getElementById('content').innerHTML=html;
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('folderurl').value.trim();const s=document.getElementById('status');if(!v){s.textContent='Saisis une adresse de dossier, ou utilise le bouton Effacer.';return}if(!safeURL(v)){s.textContent='Lien refusé : HTTPS requis, sans identifiant ni paramètre de jeton.';return}if(!/(^|\.)onedrive\.live\.com$|(^|\.)sharepoint\.com$|(^|\.)1drv\.ms$/i.test(new URL(v).hostname)){s.textContent='Utilise uniquement un lien OneDrive ou SharePoint officiel.';return}saved[pathKey]=v;try{localStorage.setItem(KEY,JSON.stringify(saved));location.reload()}catch(err){s.textContent='Le navigateur refuse le stockage local.'}});
+document.getElementById('remove').addEventListener('click',()=>{delete saved[pathKey];try{localStorage.setItem(KEY,JSON.stringify(saved));location.reload()}catch(err){document.getElementById('status').textContent='Effacement impossible dans ce navigateur.'}});
+</script></body></html>
