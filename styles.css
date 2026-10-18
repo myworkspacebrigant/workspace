@@ -62,23 +62,5 @@ input[type=checkbox]{accent-color:#26e1f7}
 .motion-launch{padding:80px 20px;text-align:center;border:1px solid #28778a;background:radial-gradient(circle,#0b364a,#071420 70%)}
 .motion-launch{text-align:center;padding:70px 20px;border:1px solid #267e98;background:radial-gradient(circle,#0c3449,#06121f)}.motion-launch h2{color:#80edff;letter-spacing:3px;margin-bottom:30px}
 
-/* Tableau de bord quotidien : extension de l'accueil, sans modifier NEURAL V9 */
-.daily-intro{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:16px 0 20px;padding:22px;border:1px solid #267e9980;border-radius:16px;background:linear-gradient(115deg,#0a3046cc,#071724bb)}
-.daily-intro h2{font-size:clamp(22px,3vw,34px);margin:8px 0;text-transform:capitalize;color:#e1faff}
-.daily-intro p{color:#95bccc;margin:0}
-.daily-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
-.daily-stat{border:1px solid #1b718b80;background:#071c2bbd;border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:7px}
-.daily-stat strong{font-size:36px;line-height:1;color:#65e5ff}
-.daily-stat span{color:#a1c6d2;font-size:13px}
-.daily-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}
-.daily-panel{min-width:0;border:1px solid #1b718b77;border-radius:14px;padding:16px;background:#061725aa}
-.daily-panel .section{margin-top:0}
-.daily-links{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
-.daily-links a{text-decoration:none;display:inline-flex;align-items:center}
-@media(max-width:760px){.daily-columns{grid-template-columns:1fr}.daily-stats{grid-template-columns:1fr 1fr}.daily-intro{padding:16px}}
-@media(max-width:420px){.daily-stats{grid-template-columns:1fr}}
-
-/* Arborescence BRIG */
-.brig-folders{display:grid;gap:9px;margin-top:16px}.brig-folder{border:1px solid #28778a88;border-radius:10px;background:#081d2b;padding:0 13px}.brig-folder summary{cursor:pointer;padding:13px 3px;color:#c5f3ff;font-weight:600;list-style:none}.brig-folder summary::-webkit-details-marker{display:none}.brig-folder[open] summary{border-bottom:1px solid #28778a66}.brig-children{display:grid;gap:11px;padding:14px 8px 17px 24px;color:#b3d0db}
-
-.brig-folders{display:grid;gap:9px;margin-top:16px}.brig-folder{border:1px solid #28778a88;border-radius:10px;background:#081d2b;padding:0 13px}.brig-folder summary{cursor:pointer;padding:13px 3px;color:#c5f3ff;font-weight:600;list-style:none}.brig-folder[open] summary{border-bottom:1px solid #28778a66}.brig-children{display:grid;gap:11px;padding:14px 8px 17px 24px;color:#b3d0db}
+/* V17 — compléments consolidés, sans altérer la direction graphique V16 */
+.card p{line-height:1.55}.card a{color:inherit;text-decoration:none}.card.click[href]{display:block;text-decoration:none;color:inherit}.card .toolbar{margin-top:12px}.top .muted{margin:6px 0 0}.team-label{display:grid;gap:10px;color:#b6dbe7}.team-count{min-width:0;max-width:150px;padding:9px 12px;background:#061724;border:1px solid #38798c;border-radius:5px;color:#e8fbff}.team-result{margin-top:13px;color:#6ee9ff;font-weight:700}.daily-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0}.daily-stat{border:1px solid #1b718b80;background:#071c2bbd;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:7px}.daily-stat strong{font-size:35px;color:#65e5ff}.daily-stat span{font-size:13px;color:#a1c6d2}@media(max-width:870px){.daily-stats{grid-template-columns:1fr 1fr}}@media(max-width:450px){.daily-stats{grid-template-columns:1fr}}
