@@ -33,6 +33,19 @@ const followu=`<div class="slide fu-slide" aria-label="Formulaire de contact Fol
 </div></div></div>`;
 function addTemplate(id,markup){const t=document.createElement('template');t.id='tpl-'+id;t.innerHTML=markup;document.body.appendChild(t)}
 addTemplate('followu',followu);addTemplate('synthese',synthese);
+/* Dès que les PNG d'origine sont déposés dans assets/, ils remplacent les reconstitutions HTML. */
+function originalIfAvailable(id,path,alt){
+  const img=new Image();
+  img.onload=function(){
+    const tpl=document.getElementById('tpl-'+id);
+    if(!tpl)return;
+    tpl.innerHTML='<div class="slide asset-full"><img src="'+path+'" alt="'+alt+'"></div>';
+  };
+  img.src=path;
+}
+originalIfAvailable('followu','assets/hier-01-followu.png','Formulaire de contact FollowU');
+originalIfAvailable('synthese','assets/hier-02-synthese.png','Synthèse du besoin – Atelier J4');
+
 function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
 replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
 replaceCard('Hier','synthese','Synthèse du besoin','Recueil du besoin · 1 diapositive.');
