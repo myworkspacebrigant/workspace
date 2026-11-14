@@ -130,7 +130,7 @@ function route(name,push){
   requestAnimationFrame(fit);
  }else{window.scrollTo({top:0,behavior:"instant"})}
  if(push){history.pushState({page:name},"","#"+name)}
- if(window.pixelMotion)window.pixelMotion.ready=true;
+ if(window.pixelMotion){window.pixelMotion.ready=true;if(!window.pixelMotion.initialShown){window.pixelMotion.initialShown=true;window.pixelMotion.play(function(){})}}
 }
 function goBack(){
  if(routeDocs.indexOf(current)!==-1){route(current==="sommaire"||current==="deroule"?"brief":"atelier",true)}
