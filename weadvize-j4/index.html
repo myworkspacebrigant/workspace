@@ -111,7 +111,6 @@ function setDocPage(n){
  stage.setAttribute("aria-label","Page "+(pageIndex+1)+" sur "+docPages.length+". Cliquer pour changer de page");
 }
 function route(name,push){
- if(window.pixelMotion && window.pixelMotion.ready && !window.pixelMotion.isSwapping && name!==current){window.pixelMotion.play(function(){route(name,push)});return}
  var isDoc=routeDocs.indexOf(name)!==-1;
  if(name.indexOf("missing-")===0){name="placeholder";isDoc=false}
  if(["start","workspace","brief","atelier","placeholder"].indexOf(name)===-1&&!isDoc)name="start";
@@ -130,7 +129,6 @@ function route(name,push){
   requestAnimationFrame(fit);
  }else{window.scrollTo({top:0,behavior:"instant"})}
  if(push){history.pushState({page:name},"","#"+name)}
- if(window.pixelMotion){window.pixelMotion.ready=true;if(!window.pixelMotion.initialShown){window.pixelMotion.initialShown=true;window.pixelMotion.play(function(){})}}
 }
 function goBack(){
  if(routeDocs.indexOf(current)!==-1){route(current==="sommaire"||current==="deroule"?"brief":"atelier",true)}
@@ -139,10 +137,27 @@ function goBack(){
  else if(current==="placeholder"){route(lastFolder,true)}
  else{route("start",true)}
 }
+/* Les pixels ne concernent que la tuile activée. Retour et navigation générale : sans effet. */
+function openFromModule(element,callback){
+ if(window.modulePixelMotion){window.modulePixelMotion.play(element,callback)}
+ else{callback()}
+}
 document.addEventListener("click",function(ev){
- var go=ev.target.closest("[data-nav]");if(go){route(go.getAttribute("data-nav"),true);return}
- var doc=ev.target.closest("[data-doc]");if(doc){route(doc.getAttribute("data-doc"),true);return}
- var missing=ev.target.closest("[data-missing]");if(missing){lastFolder=missing.getAttribute("data-parent")||"atelier";document.getElementById("missing-title").textContent=missing.getAttribute("data-missing");route("placeholder",true)}
+ var go=ev.target.closest("[data-nav]");
+ if(go){
+  if(go.matches(".card,.folder-main")){
+   openFromModule(go,function(){route(go.getAttribute("data-nav"),true)});
+  }else{route(go.getAttribute("data-nav"),true)}
+  return
+ }
+ var doc=ev.target.closest("[data-doc]");
+ if(doc){openFromModule(doc,function(){route(doc.getAttribute("data-doc"),true)});return}
+ var missing=ev.target.closest("[data-missing]");
+ if(missing){
+  lastFolder=missing.getAttribute("data-parent")||"atelier";
+  document.getElementById("missing-title").textContent=missing.getAttribute("data-missing");
+  openFromModule(missing,function(){route("placeholder",true)});
+ }
 });
 document.getElementById("reader-back").addEventListener("click",goBack);
 document.getElementById("siteback").addEventListener("click",goBack);
