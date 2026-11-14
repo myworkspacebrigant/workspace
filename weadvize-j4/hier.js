@@ -10,17 +10,7 @@ cal:'<svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="33" rx="3"/>
 };
 const bullets=arr=>'<ul>'+arr.map(([label,value])=>'<li><span><strong>'+label+' :</strong> '+value+'</span></li>').join('')+'</ul>';
 const card=(title,icon,content,classes='')=>'<section class="wa-card '+classes+'"><div class="wa-card-head">'+icons[icon]+'<span>'+title+'</span></div><div class="wa-card-body">'+bullets(content)+'</div></section>';
-const synthese=`<div class="slide wa-slide" aria-label="Synthèse du besoin – Atelier Test 1">
-<div class="wa-orange-corner"></div><div class="wa-orange-foot"></div>
-<header class="wa-hero"><div class="wa-logo">We<span>Advize</span></div><div class="wa-head-divider"></div><div><div class="wa-title">Recueil du besoin – Atelier Test 1</div><div class="wa-subtitle">Synthèse de la réponse questionnaire</div></div></header>
-<div class="wa-grid"><div class="wa-grid-top">
-${card('Identification','person', [['Entreprise','Test 1'],['Contact','ju'],['Fonction','gerant'],['Date de l’entretien','10 novembre 2026']])}
-${card('Contexte & problématique','target', [['Contexte','nouveaux outils IA pour conception de programmes de formation'],['Situation à faire évoluer',"motiver les formateurs sur la pertinence et l'efficacité des outils IA de conception de programmes de formation"],['Origine de la demande','Direction générale'],['Précision',"tous les formateurs ne sont pas motivés ou convaincus de l'utilité de ces outils"]],'context')}
-${card('Public concerné','group', [['Nombre de personnes','8'],['Service concerné','service formation'],['Niveau actuel','ils concoivent eux-memes les programmes'],['Adaptations à prévoir','Non'],['Relais interne','le gérant, commanditaire']])}
-</div><div class="wa-grid-bottom">
-${card('Objectifs pédagogiques','cap', [['Résultat attendu','gain de productivité'],['Compétences à développer','aisance sur les outils et utilisation systématique'],['Thèmes à aborder','nouvelles demandes clients'],['À l’issue de la formation','utiliser les outils'],['Suivi à froid (3 à 6 mois)','gain de productivité']])}
-${card('Organisation','cal', [['Durée envisagée','7h'],['Date souhaitée','15 décembre 2026'],['Jour privilégié','lundi'],['Lieu',"Dans l'entreprise"],['Format / salle','salle de réunion'],['Moyens disponibles','pc, wifi, outils IA'],['Financement','je ne sais pas'],['Supports participants','Non renseigné'],['Évaluation des acquis','Non renseigné']],'tight')}
-</div></div></div>`;
+const synthese=`<div class="slide retro-slide" aria-label="FollowU — Réponses au questionnaire, version historique"><img class="retro-logo" src="assets/followu-logo.webp" alt="FollowU"><header class="retro-header"><h1>Réponses au questionnaire</h1><p>Fiche de recueil des besoins&nbsp; | &nbsp;Entreprise : Test 1&nbsp; | &nbsp;10/11/2026</p></header><div class="retro-columns"><div class="retro-column retro-column-1"><section class="retro-section"><h2>Identité du demandeur</h2><p class="retro-line"><strong>Entreprise / organisation :</strong> Test 1</p><p class="retro-line"><strong>Prénom / pseudonyme :</strong> ju</p><p class="retro-line"><strong>Fonction :</strong> gerant</p><p class="retro-line"><strong>Entretien envisagé :</strong> 2026-11-10</p></section><section class="retro-section"><h2>Public concerné</h2><p class="retro-line"><strong>Personnes à former :</strong> 8</p><p class="retro-line"><strong>Service :</strong> service formation</p><p class="retro-line"><strong>Expérience :</strong> ils concoivent eux-memes les programmes</p><p class="retro-line"><strong>Adaptations :</strong> Non</p><p class="retro-line"><strong>Aménagements :</strong> Non renseigné</p><p class="retro-line"><strong>Relais interne :</strong> le gérant, commanditaire</p></section></div><div class="retro-column retro-column-2"><section class="retro-section"><h2>Contexte de la demande</h2><p class="retro-line"><strong>Contexte :</strong> nouveaux outils IA pour conception de programmes de formation</p><p class="retro-line"><strong>Situation à faire évoluer :</strong> motiver les formateurs sur la pertinence et l'efficacité des outils IA de conception de programmes de formation</p><p class="retro-line"><strong>À l’origine :</strong> Direction générale</p><p class="retro-line"><strong>Précisions :</strong> tous les formateurs ne sont pas motivés ou convaincus de l'utilité de ces outils</p></section><section class="retro-section"><h2>Objectifs de la formation</h2><p class="retro-line"><strong>Résultats attendus :</strong> gain de productivité</p><p class="retro-line"><strong>Compétences :</strong> aisance sur les outils et utilisation systématique</p><p class="retro-line"><strong>Thèmes :</strong> nouvelles demandes clients</p><p class="retro-line"><strong>En fin de formation :</strong> utiliser les outils</p></section></div><div class="retro-column retro-column-3"><section class="retro-section"><h2>Organisation</h2><p class="retro-line"><strong>Durée :</strong> 7h</p><p class="retro-line"><strong>Période :</strong> 15 décembre 2026</p><p class="retro-line"><strong>Jours :</strong> lundi</p><p class="retro-line"><strong>Lieu :</strong> Dans l’entreprise</p><p class="retro-line"><strong>Format / lieu :</strong> salle de réunion</p><p class="retro-line"><strong>Matériel :</strong> pc ; wifi ; outils IA</p><p class="retro-line"><strong>Financement :</strong> je ne sais pas</p></section><section class="retro-section"><h2>Supports et suivi</h2><p class="retro-line"><strong>Supports :</strong> Non renseigné</p><p class="retro-line"><strong>Évaluation :</strong> Non renseigné</p><p class="retro-line"><strong>Suivi à 3–6 mois :</strong> gain de productivité</p><p class="retro-line"><strong>Autres informations :</strong> Non renseigné</p></section></div></div></div>`;
 const followu=`<div class="slide fu-slide" aria-label="Formulaire de contact FollowU, aperçu fictif"><div class="fu-canvas">
 <div class="fu-top-curve"></div><div class="fu-bottom-curve"></div>
 <div class="fu-brand"><div class="fu-arc"></div><div class="fu-name">Follow<span>U</span></div><div class="fu-tagline">Centre de formation pour entreprises</div></div>
@@ -44,45 +34,74 @@ function originalIfAvailable(id,path,alt){
   img.src=path;
 }
 originalIfAvailable('followu','assets/hier-01-followu.png','Formulaire de contact FollowU');
-originalIfAvailable('synthese','assets/hier-02-synthese.png','Synthèse du besoin – Atelier J4');
+// Le support Hier / 02 reprend désormais la slide FollowU historique, sans ancien remplacement PNG.
 
 function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
 replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
-replaceCard('Hier','synthese','Synthèse du besoin','Recueil du besoin · 1 diapositive.');
-/* Transition pixelisée strictement limitée au module activé. */
+replaceCard('Hier','synthese','Réponses au questionnaire','Version historique FollowU · 1 diapositive.');
+/* Ouverture immersive : seule la tuile activée absorbe l'écran, puis relâche le document. */
 const reducedMotion=window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 let moduleBusy=false;
 window.modulePixelMotion={
-  play:function(module,done){
-    if(!module || (reducedMotion && reducedMotion.matches)){done();return;}
-    if(moduleBusy)return;
-    moduleBusy=true;
-    const layer=document.createElement('span');
-    layer.className='module-pixel-layer';
-    layer.setAttribute('aria-hidden','true');
-    const ncols=16,nrows=7;
-    for(let i=0;i<ncols*nrows;i++){
-      const pixel=document.createElement('span');
-      pixel.className='module-pixel';
-      const col=i%ncols,row=Math.floor(i/ncols);
-      const tone=(col*13+row*7)%27;
-      pixel.style.background=tone<9?'#f45b26':tone<15?'#ffae82':tone<23?'#ffffff':'#272a30';
-      pixel.style.setProperty('--px-x',((col-7.5)*1.8)+'px');
-      pixel.style.setProperty('--px-y',((row-3)*3.5)+'px');
-      pixel.style.setProperty('--px-rotate',((i%9)-4)*5+'deg');
-      pixel.style.animationDelay=(col*9+row*13)+'ms';
-      layer.appendChild(pixel);
-    }
-    module.classList.add('module-transitioning');
-    module.appendChild(layer);
-    // La navigation se fait uniquement à la fin de l'animation de la carte.
-    setTimeout(function(){
-      try{done()}finally{
-        layer.remove();
-        module.classList.remove('module-transitioning');
-        moduleBusy=false;
+ play:function(module,done){
+   if(moduleBusy)return;
+   if(!module || (reducedMotion && reducedMotion.matches)){done();return;}
+   moduleBusy=true;
+   const rect=module.getBoundingClientRect();
+   const portal=document.createElement('div');
+   portal.className='module-portal-layer';
+   portal.setAttribute('aria-hidden','true');
+   const expanding=module.cloneNode(true);
+   expanding.removeAttribute('data-doc');
+   expanding.removeAttribute('data-nav');
+   expanding.removeAttribute('data-missing');
+   expanding.classList.add('module-portal-clone');
+   expanding.style.left=rect.left+'px';
+   expanding.style.top=rect.top+'px';
+   expanding.style.width=rect.width+'px';
+   expanding.style.height=rect.height+'px';
+   expanding.style.minHeight='0';
+   const doors=document.createElement('div');
+   doors.className='module-portal-doors';
+   doors.innerHTML='<div class="portal-door portal-door-left"></div><div class="portal-door portal-door-right"></div>';
+   portal.appendChild(expanding);
+   portal.appendChild(doors);
+   document.body.appendChild(portal);
+   module.classList.add('module-portal-origin');
+   // D'abord, le module lui-même grandit et recouvre toute la fenêtre.
+   requestAnimationFrame(function(){
+     requestAnimationFrame(function(){
+       expanding.classList.add('module-portal-absorbing');
+       expanding.style.left='0px';
+       expanding.style.top='0px';
+       expanding.style.width='100vw';
+       expanding.style.height='100dvh';
+     });
+   });
+   setTimeout(function(){
+      try{
+        doors.classList.add('portal-doors-ready');
+        expanding.style.opacity='0';
+        done();
+        const stage=document.getElementById('stage');
+        if(document.body.classList.contains('presenting') && stage){
+          stage.classList.add('stage-release');
+        }
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){doors.classList.add('portal-doors-open')});
+        });
+      }catch(err){
+        portal.remove();module.classList.remove('module-portal-origin');moduleBusy=false;
+        throw err;
       }
-    },510);
-  }
+      setTimeout(function(){
+        portal.remove();
+        module.classList.remove('module-portal-origin');
+        const stage=document.getElementById('stage');
+        if(stage)stage.classList.remove('stage-release');
+        moduleBusy=false;
+      },780);
+   },580);
+ }
 };
 })();
