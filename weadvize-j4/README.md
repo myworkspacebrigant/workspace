@@ -1,42 +1,39 @@
-# WeAdvize — Workspace de l’atelier J4
+# WeAdvize — Workspace Atelier J4
 
-Mini-site autonome destiné à une projection sur écran pendant l’atelier de formation de formateurs (J4).
+Site de présentation créé pour la formation « Atelier J4 ». Autonome, sans serveur applicatif, sans dépendances et sans collecte de données.
 
-## Adresse
+## Liens
 
+- Site GitHub Pages : https://myworkspacebrigant.github.io/workspace/weadvize-j4/
 - Code : https://github.com/myworkspacebrigant/workspace/tree/main/weadvize-j4
-- Publication GitHub Pages (si déjà active pour le dépôt) : https://myworkspacebrigant.github.io/workspace/weadvize-j4/
 
-Le projet est placé dans ce sous-dossier pour ne pas modifier le Workspace principal (YOLO GROUP / BRIG).
+Ce site est installé dans le sous-dossier `weadvize-j4` pour ne pas modifier le Workspace principal BRIG / YOLO GROUP.
 
-## Arborescence visible à l’écran
+## Navigation
 
-- **Workspace** — seul dossier de l’accueil
-  - **BRIEF**
-    - Brief atelier J4 — en attente
-    - Déroulé pédagogique atelier J4 — en attente
-  - **ATELIER**
-    - HIER — Page web fake test — en attente
-    - HIER — Hier — en attente
-    - AUJOURD’HUI — Programme pédagogique IA — présent sous forme de page HTML
-    - DEMAIN — Programme pédagogique Julien — présent sous forme de page HTML
-    - Analyse — en attente
+Écran d’accueil : **un seul dossier « Workspace »**.
 
-## Documentation
+- **BRIEF**
+  - Document 01 : **Sommaire atelier J4**, intégré à partir de l’image « Sommaire atelier J4.png »
+  - Document 02 : **Déroulé pédagogique J4**, intégré à partir des 2 diapositives du PowerPoint « Déroulé pédagogique J4(1).pptx »
+- **ATELIER**
+  - Hier — Page web fake test : en attente du support
+  - Hier : en attente du support
+  - Aujourd’hui — Programme pédagogique IA : intégré à partir du PDF fourni
+  - Demain — Programme pédagogique Julien : intégré à partir du PDF fourni
+  - Analyse : en attente du support
 
-Les rubriques Aujourd’hui et Demain sont des retranscriptions web des deux PDF transmis dans la conversation. Leurs contenus d’origine sont préservés au niveau des informations ; il ne s’agit **pas** de fichiers PDF binaires hébergés sur GitHub.
+## Présentation à l’écran
 
-Documents source :
-- `Programme pédagogique IA(1).pdf`
-- `Programme pédagogique Julien(1).pdf`
+Chaque document disponible s’ouvre dans un visualiseur sans défilement vertical, à l’échelle de la fenêtre du navigateur (format de référence 16:9).
 
-Quand les documents manquants seront fournis, leurs rubriques pourront être alimentées sans changer l’architecture du site.
+- Le seul bouton visible dans le visualiseur est **« ← Retour »**, en haut à droite.
+- Le document « Déroulé pédagogique J4 » comporte **2 diapositives**. Cliquez sur la diapositive ou utilisez **→** pour la suivante, **←** pour la précédente, sans scroller.
+- Utilisez **Échap** pour quitter la présentation et revenir au dossier.
+- La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-## Utilisation
+Les documents sont **reproduits en HTML à des fins de projection** afin de s’adapter à la taille de l’écran. Les fichiers originaux PNG, PPTX et PDF ne sont **pas** hébergés en tant que pièces jointes dans ce dossier GitHub ; ils restent distincts des vues web.
 
-1. Ouvrir l’adresse GitHub Pages sur le navigateur du PC relié au vidéoprojecteur.
-2. Cliquer sur « Workspace » puis sur « BRIEF » ou « ATELIER ».
-3. Cliquer sur les cartes pour afficher les programmes ou les emplacements réservés.
-4. Utiliser « Plein écran », « Retour », les flèches gauche/droite pour passer d’Aujourd’hui à Demain, ou la touche Échap pour revenir.
+## Évolution
 
-Le site n’utilise aucune dépendance externe et ne collecte aucune donnée.
+Ajouter les supports manquants ultérieurement sans modifier l’arborescence d’accueil, les rubriques ni les documents déjà intégrés.
