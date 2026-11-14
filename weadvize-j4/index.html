@@ -111,6 +111,7 @@ function setDocPage(n){
  stage.setAttribute("aria-label","Page "+(pageIndex+1)+" sur "+docPages.length+". Cliquer pour changer de page");
 }
 function route(name,push){
+ var comingFromDocument=routeDocs.indexOf(current)!==-1;
  var isDoc=routeDocs.indexOf(name)!==-1;
  if(name.indexOf("missing-")===0){name="placeholder";isDoc=false}
  if(["start","workspace","brief","atelier","placeholder"].indexOf(name)===-1&&!isDoc)name="start";
@@ -127,7 +128,11 @@ function route(name,push){
   docPages=[].slice.call(stage.children);
   setDocPage(0);
   requestAnimationFrame(fit);
- }else{window.scrollTo({top:0,behavior:"instant"})}
+ }else{
+  window.scrollTo({top:0,behavior:"instant"});
+  // Les composants du workspace apparaissent un par un, jamais à la fermeture d’un fichier.
+  if(!comingFromDocument && window.workspacePagePixels){window.workspacePagePixels.play(document.getElementById("screen-"+name));}
+ }
  if(push){history.pushState({page:name},"","#"+name)}
 }
 function goBack(){
@@ -137,11 +142,8 @@ function goBack(){
  else if(current==="placeholder"){route(lastFolder,true)}
  else{route("start",true)}
 }
-/* Les pixels ne concernent que la tuile activée. Retour et navigation générale : sans effet. */
-function openFromModule(element,callback){
- if(window.modulePixelMotion){window.modulePixelMotion.play(element,callback)}
- else{callback()}
-}
+/* Ouverture/fermeture des documents : immédiates, sans motion design. */
+function openFromModule(element,callback){callback()}
 document.addEventListener("click",function(ev){
  var go=ev.target.closest("[data-nav]");
  if(go){

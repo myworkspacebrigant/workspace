@@ -10,7 +10,7 @@ cal:'<svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="33" rx="3"/>
 };
 const bullets=arr=>'<ul>'+arr.map(([label,value])=>'<li><span><strong>'+label+' :</strong> '+value+'</span></li>').join('')+'</ul>';
 const card=(title,icon,content,classes='')=>'<section class="wa-card '+classes+'"><div class="wa-card-head">'+icons[icon]+'<span>'+title+'</span></div><div class="wa-card-body">'+bullets(content)+'</div></section>';
-const synthese=`<div class="slide retro-slide" aria-label="FollowU — Réponses au questionnaire, version historique"><img class="retro-logo" src="assets/followu-logo.webp" alt="FollowU"><header class="retro-header"><h1>Réponses au questionnaire</h1><p>Fiche de recueil des besoins&nbsp; | &nbsp;Entreprise : Test 1&nbsp; | &nbsp;10/11/2026</p></header><div class="retro-columns"><div class="retro-column retro-column-1"><section class="retro-section"><h2>Identité du demandeur</h2><p class="retro-line"><strong>Entreprise / organisation :</strong> Test 1</p><p class="retro-line"><strong>Prénom / pseudonyme :</strong> ju</p><p class="retro-line"><strong>Fonction :</strong> gerant</p><p class="retro-line"><strong>Entretien envisagé :</strong> 2026-11-10</p></section><section class="retro-section"><h2>Public concerné</h2><p class="retro-line"><strong>Personnes à former :</strong> 8</p><p class="retro-line"><strong>Service :</strong> service formation</p><p class="retro-line"><strong>Expérience :</strong> ils concoivent eux-memes les programmes</p><p class="retro-line"><strong>Adaptations :</strong> Non</p><p class="retro-line"><strong>Aménagements :</strong> Non renseigné</p><p class="retro-line"><strong>Relais interne :</strong> le gérant, commanditaire</p></section></div><div class="retro-column retro-column-2"><section class="retro-section"><h2>Contexte de la demande</h2><p class="retro-line"><strong>Contexte :</strong> nouveaux outils IA pour conception de programmes de formation</p><p class="retro-line"><strong>Situation à faire évoluer :</strong> motiver les formateurs sur la pertinence et l'efficacité des outils IA de conception de programmes de formation</p><p class="retro-line"><strong>À l’origine :</strong> Direction générale</p><p class="retro-line"><strong>Précisions :</strong> tous les formateurs ne sont pas motivés ou convaincus de l'utilité de ces outils</p></section><section class="retro-section"><h2>Objectifs de la formation</h2><p class="retro-line"><strong>Résultats attendus :</strong> gain de productivité</p><p class="retro-line"><strong>Compétences :</strong> aisance sur les outils et utilisation systématique</p><p class="retro-line"><strong>Thèmes :</strong> nouvelles demandes clients</p><p class="retro-line"><strong>En fin de formation :</strong> utiliser les outils</p></section></div><div class="retro-column retro-column-3"><section class="retro-section"><h2>Organisation</h2><p class="retro-line"><strong>Durée :</strong> 7h</p><p class="retro-line"><strong>Période :</strong> 15 décembre 2026</p><p class="retro-line"><strong>Jours :</strong> lundi</p><p class="retro-line"><strong>Lieu :</strong> Dans l’entreprise</p><p class="retro-line"><strong>Format / lieu :</strong> salle de réunion</p><p class="retro-line"><strong>Matériel :</strong> pc ; wifi ; outils IA</p><p class="retro-line"><strong>Financement :</strong> je ne sais pas</p></section><section class="retro-section"><h2>Supports et suivi</h2><p class="retro-line"><strong>Supports :</strong> Non renseigné</p><p class="retro-line"><strong>Évaluation :</strong> Non renseigné</p><p class="retro-line"><strong>Suivi à 3–6 mois :</strong> gain de productivité</p><p class="retro-line"><strong>Autres informations :</strong> Non renseigné</p></section></div></div></div>`;
+const synthese=`<div class="slide retro-slide" aria-label="FollowU — Réponses au questionnaire, version historique, source CSV" data-source-file="assets/reponses-atelier-test-1.csv"><img class="retro-logo" src="assets/followu-logo.webp" alt="FollowU"><header class="retro-header"><h1>Réponses au questionnaire</h1><p>Fiche de recueil des besoins&nbsp; | &nbsp;Entreprise : Test 1&nbsp; | &nbsp;10/11/2026</p></header><div class="retro-columns"><div class="retro-column retro-column-1"><section class="retro-section"><h2>Identité du demandeur</h2><p class="retro-line"><strong>Entreprise / organisation :</strong> Test 1</p><p class="retro-line"><strong>Prénom / pseudonyme :</strong> ju</p><p class="retro-line"><strong>Fonction :</strong> gerant</p><p class="retro-line"><strong>Entretien envisagé :</strong> 2026-11-10</p></section><section class="retro-section"><h2>Public concerné</h2><p class="retro-line"><strong>Personnes à former :</strong> 8</p><p class="retro-line"><strong>Service :</strong> service formation</p><p class="retro-line"><strong>Expérience :</strong> ils concoivent eux-memes les programmes</p><p class="retro-line"><strong>Adaptations :</strong> Non</p><p class="retro-line"><strong>Aménagements :</strong> Non renseigné</p><p class="retro-line"><strong>Relais interne :</strong> le gérant, commanditaire</p></section></div><div class="retro-column retro-column-2"><section class="retro-section"><h2>Contexte de la demande</h2><p class="retro-line"><strong>Contexte :</strong> nouveaux outils IA pour conception de programmes de formation</p><p class="retro-line"><strong>Situation à faire évoluer :</strong> motiver les formateurs sur la pertinence et l'efficacité des outils IA de conception de programmes de formation</p><p class="retro-line"><strong>À l’origine :</strong> Direction générale</p><p class="retro-line"><strong>Précisions :</strong> tous les formateurs ne sont pas motivés ou convaincus de l'utilité de ces outils</p></section><section class="retro-section"><h2>Objectifs de la formation</h2><p class="retro-line"><strong>Résultats attendus :</strong> gain de productivité</p><p class="retro-line"><strong>Compétences :</strong> aisance sur les outils et utilisation systématique</p><p class="retro-line"><strong>Thèmes :</strong> nouvelles demandes clients</p><p class="retro-line"><strong>En fin de formation :</strong> utiliser les outils</p></section></div><div class="retro-column retro-column-3"><section class="retro-section"><h2>Organisation</h2><p class="retro-line"><strong>Durée :</strong> 7h</p><p class="retro-line"><strong>Période :</strong> 15 décembre 2026</p><p class="retro-line"><strong>Jours :</strong> lundi</p><p class="retro-line"><strong>Lieu :</strong> Dans l’entreprise</p><p class="retro-line"><strong>Format / lieu :</strong> salle de réunion</p><p class="retro-line"><strong>Matériel :</strong> pc ; wifi ; outils IA</p><p class="retro-line"><strong>Financement :</strong> je ne sais pas</p></section><section class="retro-section"><h2>Supports et suivi</h2><p class="retro-line"><strong>Supports :</strong> Non renseigné</p><p class="retro-line"><strong>Évaluation :</strong> Non renseigné</p><p class="retro-line"><strong>Suivi à 3–6 mois :</strong> gain de productivité</p><p class="retro-line"><strong>Autres informations :</strong> Non renseigné</p></section></div></div></div>`;
 const followu=`<div class="slide fu-slide" aria-label="Formulaire de contact FollowU, aperçu fictif"><div class="fu-canvas">
 <div class="fu-top-curve"></div><div class="fu-bottom-curve"></div>
 <div class="fu-brand"><div class="fu-arc"></div><div class="fu-name">Follow<span>U</span></div><div class="fu-tagline">Centre de formation pour entreprises</div></div>
@@ -38,70 +38,51 @@ originalIfAvailable('followu','assets/hier-01-followu.png','Formulaire de contac
 
 function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
 replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
-replaceCard('Hier','synthese','Réponses au questionnaire','Version historique FollowU · 1 diapositive.');
-/* Ouverture immersive : seule la tuile activée absorbe l'écran, puis relâche le document. */
-const reducedMotion=window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
-let moduleBusy=false;
-window.modulePixelMotion={
- play:function(module,done){
-   if(moduleBusy)return;
-   if(!module || (reducedMotion && reducedMotion.matches)){done();return;}
-   moduleBusy=true;
-   const rect=module.getBoundingClientRect();
-   const portal=document.createElement('div');
-   portal.className='module-portal-layer';
-   portal.setAttribute('aria-hidden','true');
-   const expanding=module.cloneNode(true);
-   expanding.removeAttribute('data-doc');
-   expanding.removeAttribute('data-nav');
-   expanding.removeAttribute('data-missing');
-   expanding.classList.add('module-portal-clone');
-   expanding.style.left=rect.left+'px';
-   expanding.style.top=rect.top+'px';
-   expanding.style.width=rect.width+'px';
-   expanding.style.height=rect.height+'px';
-   expanding.style.minHeight='0';
-   const doors=document.createElement('div');
-   doors.className='module-portal-doors';
-   doors.innerHTML='<div class="portal-door portal-door-left"></div><div class="portal-door portal-door-right"></div>';
-   portal.appendChild(expanding);
-   portal.appendChild(doors);
-   document.body.appendChild(portal);
-   module.classList.add('module-portal-origin');
-   // D'abord, le module lui-même grandit et recouvre toute la fenêtre.
-   requestAnimationFrame(function(){
-     requestAnimationFrame(function(){
-       expanding.classList.add('module-portal-absorbing');
-       expanding.style.left='0px';
-       expanding.style.top='0px';
-       expanding.style.width='100vw';
-       expanding.style.height='100dvh';
-     });
+replaceCard('Hier','synthese','Réponses au questionnaire','Source CSV FollowU · 1 diapositive.');
+
+/* Effet de construction par mini-pixels, page par page.
+   Ne s'applique jamais aux documents, ni à leur ouverture ou fermeture. */
+window.workspacePagePixels={
+ play:function(screen){
+   if(!screen)return;
+   const old=screen.querySelectorAll('.ui-pixel-target');
+   old.forEach(function(el){
+     el.classList.remove('ui-pixel-target','ui-pixel-animate');
+     el.style.removeProperty('--ui-enter-delay');
+     el.querySelectorAll(':scope > .ui-pixel-cloud').forEach(function(n){n.remove()});
    });
-   setTimeout(function(){
-      try{
-        doors.classList.add('portal-doors-ready');
-        expanding.style.opacity='0';
-        done();
-        const stage=document.getElementById('stage');
-        if(document.body.classList.contains('presenting') && stage){
-          stage.classList.add('stage-release');
-        }
-        requestAnimationFrame(function(){
-          requestAnimationFrame(function(){doors.classList.add('portal-doors-open')});
-        });
-      }catch(err){
-        portal.remove();module.classList.remove('module-portal-origin');moduleBusy=false;
-        throw err;
-      }
-      setTimeout(function(){
-        portal.remove();
-        module.classList.remove('module-portal-origin');
-        const stage=document.getElementById('stage');
-        if(stage)stage.classList.remove('stage-release');
-        moduleBusy=false;
-      },780);
-   },580);
+   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+   const targets=[].slice.call(screen.querySelectorAll(
+     '.intro > .eyebrow, .intro > h1, .intro > p, .folder-main, '+
+     '.section-heading .eyebrow, .section-heading h1, .section-heading p, .section-count, '+
+     '.cards > .card, .placeholder-card'
+   ));
+   targets.forEach(function(el,index){
+     const delay=Math.min(index*128,1200);
+     el.classList.add('ui-pixel-target');
+     el.style.setProperty('--ui-enter-delay',delay+'ms');
+     const cloud=document.createElement('span');
+     cloud.className='ui-pixel-cloud';
+     cloud.setAttribute('aria-hidden','true');
+     const count=el.classList.contains('card')||el.classList.contains('folder-main')?34:18;
+     for(let i=0;i<count;i++){
+       const pixel=document.createElement('i');
+       pixel.className='ui-pixel-point';
+       // Positionnement déterministe : dispersé dans chaque composant, sans hasard visuel.
+       const x=(i*47+index*19)%99,y=(i*23+index*13)%94;
+       pixel.style.left=x+'%';
+       pixel.style.top=y+'%';
+       pixel.style.setProperty('--point-size',((i%3)+3)+'px');
+       pixel.style.setProperty('--point-delay',((i*29)%240)+'ms');
+       pixel.style.setProperty('--point-color',(i%6===0?'#202327':i%4===0?'#c6cbd0':'#f45b26'));
+       cloud.appendChild(pixel);
+     }
+     el.appendChild(cloud);
+   });
+   requestAnimationFrame(function(){
+     if(!screen.classList.contains('active'))return;
+     targets.forEach(function(el){el.classList.add('ui-pixel-animate')});
+   });
  }
 };
 })();

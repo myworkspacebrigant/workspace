@@ -30,10 +30,10 @@ Chaque document disponible s’ouvre dans un visualiseur sans défilement vertic
 - Le seul bouton visible dans le visualiseur est **« ← Retour »**, en haut à droite.
 - Le document « Déroulé pédagogique J4 » comporte **2 diapositives**. Cliquez sur la diapositive ou utilisez **→** pour la suivante, **←** pour la précédente, sans scroller.
 - Utilisez **Échap** pour quitter la présentation et revenir au dossier.
-- Au clic sur un module, **ce module seul s'agrandit jusqu'à absorber l'écran**, puis s'ouvre en deux volets pour laisser apparaître le support. Les préférences de réduction de mouvement sont respectées.
+- À chaque ouverture d’une page de navigation (accueil, Workspace, BRIEF, ATELIER), **les titres, textes et modules apparaissent successivement avec des mini-pixels**. Les documents s’ouvrent et se ferment immédiatement, sans animation. Les préférences de réduction de mouvement sont respectées.
 - La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-Les supports de projection sont **reproduits en HTML et CSS**, sans défilement et avec un affichage net sur vidéoprojecteur. Le visuel de `Hier / 02` reprend les rubriques et réponses de la slide PowerPoint FollowU « ancienne version » ; son logo d'origine est inclus dans `assets/followu-logo.webp`. Le fichier PPTX binaire n'est pas hébergé dans le dépôt. Le visuel `Hier / 01` peut être remplacé par `assets/hier-01-followu.png` si nécessaire. L'animation est définie dans `hier.js` et `hier.css`.
+Les supports de projection sont **reproduits en HTML et CSS**, sans défilement et avec un affichage net sur vidéoprojecteur. Le module `Hier / 02` présente **sur une slide** les réponses du fichier transmis `reponses-atelier test 1(3).csv` ; le CSV original est conservé dans `assets/reponses-atelier-test-1.csv`. Les réponses apparaissent dans une mise en page FollowU volontairement ancienne et épurée, avec le logo dans `assets/followu-logo.webp`. Le PPTX binaire n'est pas hébergé dans le dépôt. Le visuel `Hier / 01` peut être remplacé par `assets/hier-01-followu.png` si nécessaire. L'animation est définie dans `hier.js` et `hier.css`.
 
 ## Évolution
 
