@@ -1,0 +1,53 @@
+
+(function(){
+'use strict';
+const icons={
+person:'<svg viewBox="0 0 48 48"><circle cx="24" cy="11" r="8"/><path d="M8 40v-4c0-10 8-15 16-15s16 5 16 15v4c-8 7-24 7-32 0z"/></svg>',
+target:'<svg viewBox="0 0 48 48"><circle cx="23" cy="25" r="17"/><circle cx="23" cy="25" r="9"/><path d="M23 25l17-17M34 8h7v7"/></svg>',
+group:'<svg viewBox="0 0 48 48"><circle cx="23" cy="12" r="7"/><path d="M11 42V32c0-8 5-13 12-13s12 5 12 13v10z"/><circle cx="6" cy="22" r="4"/><path d="M2 39v-9c0-4 3-6 7-6"/><circle cx="42" cy="22" r="4"/><path d="M46 39v-9c0-4-3-6-7-6"/></svg>',
+cap:'<svg viewBox="0 0 48 48"><path d="M3 17l21-11 21 11-21 11zM12 23v10c8 7 16 7 24 0V23M42 20v13"/></svg>',
+cal:'<svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="33" rx="3"/><path d="M5 20h38M15 5v10M33 5v10M14 28h5M27 28h5M14 36h5M27 36h5"/></svg>'
+};
+const bullets=arr=>'<ul>'+arr.map(([label,value])=>'<li><span><strong>'+label+' :</strong> '+value+'</span></li>').join('')+'</ul>';
+const card=(title,icon,content,classes='')=>'<section class="wa-card '+classes+'"><div class="wa-card-head">'+icons[icon]+'<span>'+title+'</span></div><div class="wa-card-body">'+bullets(content)+'</div></section>';
+const synthese=`<div class="slide wa-slide" aria-label="Synthèse du besoin – Atelier Test 1">
+<div class="wa-orange-corner"></div><div class="wa-orange-foot"></div>
+<header class="wa-hero"><div class="wa-logo">We<span>Advize</span></div><div class="wa-head-divider"></div><div><div class="wa-title">Recueil du besoin – Atelier Test 1</div><div class="wa-subtitle">Synthèse de la réponse questionnaire</div></div></header>
+<div class="wa-grid"><div class="wa-grid-top">
+${card('Identification','person', [['Entreprise','Test 1'],['Contact','ju'],['Fonction','gerant'],['Date de l’entretien','10 novembre 2026']])}
+${card('Contexte & problématique','target', [['Contexte','nouveaux outils IA pour conception de programmes de formation'],['Situation à faire évoluer',"motiver les formateurs sur la pertinence et l'efficacité des outils IA de conception de programmes de formation"],['Origine de la demande','Direction générale'],['Précision',"tous les formateurs ne sont pas motivés ou convaincus de l'utilité de ces outils"]],'context')}
+${card('Public concerné','group', [['Nombre de personnes','8'],['Service concerné','service formation'],['Niveau actuel','ils concoivent eux-memes les programmes'],['Adaptations à prévoir','Non'],['Relais interne','le gérant, commanditaire']])}
+</div><div class="wa-grid-bottom">
+${card('Objectifs pédagogiques','cap', [['Résultat attendu','gain de productivité'],['Compétences à développer','aisance sur les outils et utilisation systématique'],['Thèmes à aborder','nouvelles demandes clients'],['À l’issue de la formation','utiliser les outils'],['Suivi à froid (3 à 6 mois)','gain de productivité']])}
+${card('Organisation','cal', [['Durée envisagée','7h'],['Date souhaitée','15 décembre 2026'],['Jour privilégié','lundi'],['Lieu',"Dans l'entreprise"],['Format / salle','salle de réunion'],['Moyens disponibles','pc, wifi, outils IA'],['Financement','je ne sais pas'],['Supports participants','Non renseigné'],['Évaluation des acquis','Non renseigné']],'tight')}
+</div></div></div>`;
+const followu=`<div class="slide fu-slide" aria-label="Formulaire de contact FollowU, aperçu fictif"><div class="fu-canvas">
+<div class="fu-top-curve"></div><div class="fu-bottom-curve"></div>
+<div class="fu-brand"><div class="fu-arc"></div><div class="fu-name">Follow<span>U</span></div><div class="fu-tagline">Centre de formation pour entreprises</div></div>
+<div class="fu-form-panel"><div class="fu-envelope">✉</div><div class="fu-form-title">Contactez-nous</div>
+<p class="fu-desc">Parlez-nous de votre projet de formation,<br>nous vous accompagnons avec une solution sur mesure.</p>
+<div class="fu-field"><span class="fu-field-icon">▦</span>Nom de l’entreprise</div>
+<div class="fu-field"><span class="fu-field-icon">✉</span>Email</div>
+<div class="fu-field message"><span class="fu-field-icon">☏</span>Description de votre besoin</div>
+<div class="fu-send">Envoyer <span>→</span></div>
+</div></div></div>`;
+function addTemplate(id,markup){const t=document.createElement('template');t.id='tpl-'+id;t.innerHTML=markup;document.body.appendChild(t)}
+addTemplate('followu',followu);addTemplate('synthese',synthese);
+function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
+replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
+replaceCard('Hier','synthese','Synthèse du besoin','Recueil du besoin · 1 diapositive.');
+const curtain=document.createElement('div');curtain.id='pixel-curtain';curtain.setAttribute('aria-hidden','true');
+const pixels=[];for(let i=0;i<576;i++){const p=document.createElement('span');p.className='px';const v=(i*19+Math.floor(i/32)*7)%31;p.style.background=v<4?'#22262d':v<12?'#f45b26':v<20?'#f8b38e':'#fff';p.style.setProperty('--tx',((i%5)-2)*16+'px');p.style.setProperty('--ty',((i%7)-3)*14+'px');p.style.setProperty('--rot',((i%9)-4)*8+'deg');curtain.appendChild(p);pixels.push(p)}document.body.appendChild(curtain);
+const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');let busy=false;
+window.pixelMotion={ready:false,isSwapping:false,play:function(swap){
+if(reduce&&reduce.matches){this.isSwapping=true;swap();this.isSwapping=false;return}
+if(busy)return;busy=true;curtain.classList.add('active');
+pixels.forEach((p,i)=>{p.classList.remove('pixel-in','pixel-out');p.style.animationDelay=(((i%32)*4+Math.floor(i/32)*5)%185)+'ms'});
+requestAnimationFrame(()=>{pixels.forEach(p=>p.classList.add('pixel-in'))});
+setTimeout(()=>{this.isSwapping=true;try{swap()}finally{this.isSwapping=false}
+pixels.forEach((p,i)=>{p.classList.remove('pixel-in');p.style.animationDelay=(((31-i%32)*4+(17-Math.floor(i/32))*5)%185)+'ms'});
+requestAnimationFrame(()=>pixels.forEach(p=>p.classList.add('pixel-out')));
+setTimeout(()=>{curtain.classList.remove('active');pixels.forEach(p=>p.classList.remove('pixel-out'));busy=false},740)
+},530)
+}};
+})();
