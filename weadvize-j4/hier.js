@@ -49,18 +49,40 @@ originalIfAvailable('synthese','assets/hier-02-synthese.png','Synthèse du besoi
 function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
 replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
 replaceCard('Hier','synthese','Synthèse du besoin','Recueil du besoin · 1 diapositive.');
-const curtain=document.createElement('div');curtain.id='pixel-curtain';curtain.setAttribute('aria-hidden','true');
-const pixels=[];for(let i=0;i<576;i++){const p=document.createElement('span');p.className='px';const v=(i*19+Math.floor(i/32)*7)%31;p.style.background=v<4?'#22262d':v<12?'#f45b26':v<20?'#f8b38e':'#fff';p.style.setProperty('--tx',((i%5)-2)*16+'px');p.style.setProperty('--ty',((i%7)-3)*14+'px');p.style.setProperty('--rot',((i%9)-4)*8+'deg');curtain.appendChild(p);pixels.push(p)}document.body.appendChild(curtain);
-const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');let busy=false;
-window.pixelMotion={ready:false,isSwapping:false,play:function(swap){
-if(reduce&&reduce.matches){this.isSwapping=true;swap();this.isSwapping=false;return}
-if(busy)return;busy=true;curtain.classList.add('active');
-pixels.forEach((p,i)=>{p.classList.remove('pixel-in','pixel-out');p.style.animationDelay=(((i%32)*4+Math.floor(i/32)*5)%185)+'ms'});
-requestAnimationFrame(()=>{pixels.forEach(p=>p.classList.add('pixel-in'))});
-setTimeout(()=>{this.isSwapping=true;try{swap()}finally{this.isSwapping=false}
-pixels.forEach((p,i)=>{p.classList.remove('pixel-in');p.style.animationDelay=(((31-i%32)*4+(17-Math.floor(i/32))*5)%185)+'ms'});
-requestAnimationFrame(()=>pixels.forEach(p=>p.classList.add('pixel-out')));
-setTimeout(()=>{curtain.classList.remove('active');pixels.forEach(p=>p.classList.remove('pixel-out'));busy=false},740)
-},530)
-}};
+/* Transition pixelisée strictement limitée au module activé. */
+const reducedMotion=window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+let moduleBusy=false;
+window.modulePixelMotion={
+  play:function(module,done){
+    if(!module || (reducedMotion && reducedMotion.matches)){done();return;}
+    if(moduleBusy)return;
+    moduleBusy=true;
+    const layer=document.createElement('span');
+    layer.className='module-pixel-layer';
+    layer.setAttribute('aria-hidden','true');
+    const ncols=16,nrows=7;
+    for(let i=0;i<ncols*nrows;i++){
+      const pixel=document.createElement('span');
+      pixel.className='module-pixel';
+      const col=i%ncols,row=Math.floor(i/ncols);
+      const tone=(col*13+row*7)%27;
+      pixel.style.background=tone<9?'#f45b26':tone<15?'#ffae82':tone<23?'#ffffff':'#272a30';
+      pixel.style.setProperty('--px-x',((col-7.5)*1.8)+'px');
+      pixel.style.setProperty('--px-y',((row-3)*3.5)+'px');
+      pixel.style.setProperty('--px-rotate',((i%9)-4)*5+'deg');
+      pixel.style.animationDelay=(col*9+row*13)+'ms';
+      layer.appendChild(pixel);
+    }
+    module.classList.add('module-transitioning');
+    module.appendChild(layer);
+    // La navigation se fait uniquement à la fin de l'animation de la carte.
+    setTimeout(function(){
+      try{done()}finally{
+        layer.remove();
+        module.classList.remove('module-transitioning');
+        moduleBusy=false;
+      }
+    },510);
+  }
+};
 })();
