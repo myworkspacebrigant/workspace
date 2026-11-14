@@ -33,7 +33,7 @@ Chaque document disponible s’ouvre dans un visualiseur sans défilement vertic
 - Les transitions de navigation comportent une animation **construction / déconstruction en pixels**. Les préférences de réduction de mouvement de l’utilisateur sont respectées.
 - La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-Les documents, y compris les deux visuels « Hier », sont **reproduits en HTML et CSS pour la projection**, sans défilement et avec des textes nets à l’écran. Les originaux PNG, PPTX et PDF ne sont **pas** hébergés en pièces jointes dans ce dossier GitHub ; les vues sont des reconstitutions visuelles des fichiers fournis et non leurs fichiers binaires. Les nouveaux écrans sont dans `hier.js` et `hier.css`.
+Les documents, y compris les deux visuels « Hier », sont **reproduits en HTML et CSS pour la projection**, sans défilement et avec des textes nets à l’écran. Les originaux PNG, PPTX et PDF ne sont **pas encore** hébergés en pièces jointes dans ce dossier GitHub ; les vues sont des reconstitutions visuelles des fichiers fournis et non leurs fichiers binaires. Les nouveaux écrans sont dans `hier.js` et `hier.css`. Pour utiliser les PNG d'origine à l'identique, déposer `assets/hier-01-followu.png` et `assets/hier-02-synthese.png` : ils s'afficheront automatiquement en plein écran à la place des reconstitutions.
 
 ## Évolution
 
