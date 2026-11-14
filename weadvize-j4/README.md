@@ -30,10 +30,10 @@ Chaque document disponible s’ouvre dans un visualiseur sans défilement vertic
 - Le seul bouton visible dans le visualiseur est **« ← Retour »**, en haut à droite.
 - Le document « Déroulé pédagogique J4 » comporte **2 diapositives**. Cliquez sur la diapositive ou utilisez **→** pour la suivante, **←** pour la précédente, sans scroller.
 - Utilisez **Échap** pour quitter la présentation et revenir au dossier.
-- Les transitions de navigation comportent une animation **construction / déconstruction en pixels**. Les préférences de réduction de mouvement de l’utilisateur sont respectées.
+- Au clic sur un module, **ce module seul s'agrandit jusqu'à absorber l'écran**, puis s'ouvre en deux volets pour laisser apparaître le support. Les préférences de réduction de mouvement sont respectées.
 - La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-Les documents, y compris les deux visuels « Hier », sont **reproduits en HTML et CSS pour la projection**, sans défilement et avec des textes nets à l’écran. Les originaux PNG, PPTX et PDF ne sont **pas encore** hébergés en pièces jointes dans ce dossier GitHub ; les vues sont des reconstitutions visuelles des fichiers fournis et non leurs fichiers binaires. Les nouveaux écrans sont dans `hier.js` et `hier.css`. Pour utiliser les PNG d'origine à l'identique, déposer `assets/hier-01-followu.png` et `assets/hier-02-synthese.png` : ils s'afficheront automatiquement en plein écran à la place des reconstitutions.
+Les supports de projection sont **reproduits en HTML et CSS**, sans défilement et avec un affichage net sur vidéoprojecteur. Le visuel de `Hier / 02` reprend les rubriques et réponses de la slide PowerPoint FollowU « ancienne version » ; son logo d'origine est inclus dans `assets/followu-logo.webp`. Le fichier PPTX binaire n'est pas hébergé dans le dépôt. Le visuel `Hier / 01` peut être remplacé par `assets/hier-01-followu.png` si nécessaire. L'animation est définie dans `hier.js` et `hier.css`.
 
 ## Évolution
 
