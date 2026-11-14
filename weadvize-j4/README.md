@@ -30,9 +30,10 @@ Chaque document disponible s’ouvre dans un visualiseur sans défilement vertic
 - Le seul bouton visible dans le visualiseur est **« ← Retour »**, en haut à droite.
 - Le document « Déroulé pédagogique J4 » comporte **2 diapositives**. Cliquez sur la diapositive ou utilisez **→** pour la suivante, **←** pour la précédente, sans scroller.
 - Utilisez **Échap** pour quitter la présentation et revenir au dossier.
+- Les transitions de navigation comportent une animation **construction / déconstruction en pixels**. Les préférences de réduction de mouvement de l’utilisateur sont respectées.
 - La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-Les documents sont **reproduits en HTML à des fins de projection** afin de s’adapter à la taille de l’écran. Les fichiers originaux PNG, PPTX et PDF ne sont **pas** hébergés en tant que pièces jointes dans ce dossier GitHub ; ils restent distincts des vues web.
+Les documents, y compris les deux visuels « Hier », sont **reproduits en HTML et CSS pour la projection**, sans défilement et avec des textes nets à l’écran. Les originaux PNG, PPTX et PDF ne sont **pas** hébergés en pièces jointes dans ce dossier GitHub ; les vues sont des reconstitutions visuelles des fichiers fournis et non leurs fichiers binaires. Les nouveaux écrans sont dans `hier.js` et `hier.css`.
 
 ## Évolution
 
