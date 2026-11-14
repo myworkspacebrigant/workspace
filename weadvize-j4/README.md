@@ -19,8 +19,8 @@ Ce site est installé dans le sous-dossier `weadvize-j4` pour ne pas modifier le
 - **ATELIER**
   - Hier — Page web fake test : en attente du support
   - Hier : en attente du support
-  - Aujourd’hui — Programme pédagogique IA : intégré à partir du PDF fourni
-  - Demain — Programme pédagogique Julien : intégré à partir du PDF fourni
+  - Aujourd’hui — Programme pédagogique IA : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
+  - Demain — Programme pédagogique Julien : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
   - Analyse : en attente du support
 
 ## Présentation à l’écran
@@ -33,8 +33,15 @@ Chaque document disponible s’ouvre dans un visualiseur sans défilement vertic
 - À chaque ouverture d’une page de navigation (accueil, Workspace, BRIEF, ATELIER), **les titres, textes et modules apparaissent successivement avec des mini-pixels**. Les documents s’ouvrent et se ferment immédiatement, sans animation. Les préférences de réduction de mouvement sont respectées.
 - La charte du site suit les documents transmis : **fond blanc, orange, noir, gris, titres marqués et deux colonnes**.
 
-Les supports de projection sont **reproduits en HTML et CSS**, sans défilement et avec un affichage net sur vidéoprojecteur. Le module `Hier / 02` présente **sur une slide** les réponses du fichier transmis `reponses-atelier test 1(3).csv` ; le CSV original est conservé dans `assets/reponses-atelier-test-1.csv`. Les réponses apparaissent dans une mise en page FollowU volontairement ancienne et épurée, avec le logo dans `assets/followu-logo.webp`. Le PPTX binaire n'est pas hébergé dans le dépôt. Le visuel `Hier / 01` peut être remplacé par `assets/hier-01-followu.png` si nécessaire. L'animation est définie dans `hier.js` et `hier.css`.
+Les supports de projection sont **reproduits en HTML et CSS**, sans défilement et avec un affichage net sur vidéoprojecteur. Le module `Hier / 02` présente **sur une slide** les réponses du fichier transmis `reponses-atelier test 1(3).csv` ; le CSV original est conservé dans `assets/reponses-atelier-test-1.csv`. Les réponses apparaissent dans une mise en page FollowU volontairement ancienne et épurée, avec le logo dans `assets/followu-logo.webp`. Les deux PowerPoint FollowU en une seule slide sont désormais **hébergés dans `assets/`**, avec leurs aperçus WebP haute définition. Les rubriques `Aujourd’hui` et `Demain` affichent les diapositives fidèles aux PowerPoint, ajustées à la fenêtre sans défilement. Le visuel `Hier / 01` peut être remplacé par `assets/hier-01-followu.png` si nécessaire. L'animation est définie dans `hier.js` et `hier.css`.
 
 ## Évolution
 
 Ajouter les supports manquants ultérieurement sans modifier l’arborescence d’accueil, les rubriques ni les documents déjà intégrés.
+
+## Présentations FollowU ajoutées
+
+- **AUJOURD’HUI / 03 — Programme pédagogique IA (7 h, 1 slide)** : [Télécharger le PPTX](assets/programme-pedagogique-ia-followu-1-slide.pptx) ; [aperçu](assets/programme-pedagogique-ia-followu-1-slide.webp)
+- **DEMAIN / 04 — Programme pédagogique Julien (6 h, 1 slide)** : [Télécharger le PPTX](assets/programme-pedagogique-julien-followu-1-slide.pptx) ; [aperçu](assets/programme-pedagogique-julien-followu-1-slide.webp)
+
+La charte FollowU est conservée dans les fichiers eux-mêmes ; aucun autre document n'a été remplacé.
