@@ -18,31 +18,19 @@
 .sommaire .slide-col:last-child .somm-body li{margin-bottom:7px}
 @media(max-width:850px){.cards.atelier .analysis-wide{grid-column:span 1}.cards.atelier .card:not(.analysis-wide){min-height:175px}.cards.atelier .analysis-wide{min-height:170px}}
 
-/* Loupe WeAdvize : passage sur le logo une fois toutes les 5 secondes. */
-.brand-magnified{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:flex-start;white-space:nowrap;min-height:54px;overflow:visible}
-.brand-magnified .brand-label{display:block;position:relative;z-index:1}
-.brand-magnified .brand-zoom{position:absolute;inset:0;display:flex;align-items:center;z-index:2;pointer-events:none;
-  transform:scale(1.25);transform-origin:center;clip-path:circle(0px at 5% 50%);opacity:0;
-  animation:brandZoomCycle 5s linear infinite}
-.brand-magnified .brand-loupe{position:absolute;z-index:3;pointer-events:none;width:43px;height:43px;
-  left:5%;top:50%;border-radius:50%;border:3px solid #e77b39;background:rgba(255,255,255,.14);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 2px 9px rgba(12,16,23,.2);
-  transform:translate(-50%,-50%);opacity:0;animation:brandLensCycle 5s linear infinite}
-.brand-magnified .brand-loupe:after{content:"";position:absolute;bottom:-9px;right:-13px;width:19px;height:5px;
-  background:#e77b39;border-radius:5px;transform:rotate(48deg);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-@keyframes brandLensCycle{
-  0%,67%{left:5%;opacity:0}
-  72%{left:5%;opacity:1}
-  94%{left:92%;opacity:1}
-  98%,100%{left:92%;opacity:0}
+
+/* WeAdvize : rebond du logo sur lui-même une fois toutes les 5 secondes. */
+.brand-bounce{display:inline-flex;align-items:center;justify-content:flex-start;white-space:nowrap;transform-origin:50% 85%;animation:brandBounceCycle 5s ease-in-out infinite}
+.brand-bounce .brand-label{display:block}
+@keyframes brandBounceCycle{
+  0%,81%,100%{transform:translateY(0) scale(1)}
+  84%{transform:translateY(-9px) scale(1.045)}
+  88%{transform:translateY(0) scale(.985, .965)}
+  91%{transform:translateY(-4px) scale(1.015)}
+  94%{transform:translateY(0) scale(1.005, .99)}
+  97%{transform:translateY(0) scale(1)}
 }
-@keyframes brandZoomCycle{
-  0%,67%{opacity:0;clip-path:circle(0px at 5% 50%)}
-  72%{opacity:1;clip-path:circle(21px at 5% 50%)}
-  94%{opacity:1;clip-path:circle(21px at 92% 50%)}
-  98%,100%{opacity:0;clip-path:circle(0px at 92% 50%)}
-}
-@media(prefers-reduced-motion:reduce){.brand-magnified .brand-zoom,.brand-magnified .brand-loupe{display:none;animation:none}}
+@media(prefers-reduced-motion:reduce){.brand-bounce{animation:none}}
 
 /* Lien quiz : visible exclusivement dans Aujourd'hui quand une URL validée a été fournie. */
 .today-quiz-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 18px;border:1px solid #d5d8de;
@@ -52,7 +40,7 @@
 @media(max-width:850px){.today-quiz-link{font-size:13px;padding:7px 10px}}
 </style><link rel="stylesheet" href="hier.css"></head><body>
 <div id="site">
-<header class="mast frame"><button class="brand brand-magnified" data-nav="start" aria-label="Accueil WeAdvize"><span class="brand-label">WeAdvize<em>.</em></span><span class="brand-zoom" aria-hidden="true">WeAdvize<em>.</em></span><span class="brand-loupe" aria-hidden="true"></span></button><div class="mast-right"><span class="eyebrow">Atelier J4</span><span class="badge-slim">Espace de présentation</span><button id="siteback" class="back-small" type="button">← Retour</button></div></header>
+<header class="mast frame"><button class="brand brand-bounce" data-nav="start" aria-label="Accueil WeAdvize"><span class="brand-label">WeAdvize<em>.</em></span></button><div class="mast-right"><span class="eyebrow">Atelier J4</span><span class="badge-slim">Espace de présentation</span><button id="siteback" class="back-small" type="button">← Retour</button></div></header>
 <main class="frame">
 <section class="screen active" id="screen-start"><div class="intro"><div class="eyebrow">WeAdvize / Formation / J4</div><h1>Atelier J4.<br><span>Votre espace de travail.</span></h1><p>Une présentation structurée pour le brief, les productions pédagogiques et l’analyse de l’atelier.</p></div><button class="folder-main" data-nav="workspace"><svg viewBox="0 0 100 86" role="img" aria-label="Dossier"><path fill="#f45b26" d="M7 18c0-5 4-9 9-9h26l10 12h33c6 0 9 5 9 10v43c0 6-4 10-10 10H16C10 84 7 79 7 74V18Z"/><path d="M8 33h86" stroke="#fff" stroke-width="5" opacity=".25"/></svg><span><strong>Workspace</strong><small>Ouvrir les dossiers BRIEF et ATELIER</small></span><span class="goto">↗</span></button></section>
 <section class="screen" id="screen-workspace"><div class="section-heading"><div class="eyebrow">Workspace / Dossiers</div><h1>Vos deux espaces.</h1><p>Accédez aux documents du brief ou au parcours de l’atelier.</p></div><div class="cards"><button class="card" data-nav="brief"><span class="cardtop"><span class="n">01 / DOSSIER</span><span class="state ready">Ouvrir</span></span><span class="cardbottom"><span><h2>BRIEF</h2><p>Sommaire et déroulé pédagogique de l’atelier J4.</p></span><span class="goto">↗</span></span></button><button class="card" data-nav="atelier"><span class="cardtop"><span class="n">02 / DOSSIER</span><span class="state ready">Ouvrir</span></span><span class="cardbottom"><span><h2>ATELIER</h2><p>Hier, Aujourd’hui, Demain et Analyse.</p></span><span class="goto">↗</span></span></button></div></section>
