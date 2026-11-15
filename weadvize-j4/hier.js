@@ -38,7 +38,7 @@ originalIfAvailable('followu','assets/hier-01-followu.png','Formulaire de contac
 
 function replaceCard(search,doc,title,description){const btn=document.querySelector('[data-missing="'+search+'"]');if(!btn)return;btn.removeAttribute('data-missing');btn.removeAttribute('data-parent');btn.setAttribute('data-doc',doc);const h=btn.querySelector('h2');if(h)h.textContent=title;const p=btn.querySelector('p');if(p)p.textContent=description;const s=btn.querySelector('.state');if(s){s.textContent='Disponible';s.classList.add('ready')}}
 replaceCard('Page web fake test','followu','Formulaire de contact FollowU','Formulaire fictif · présentation plein écran.');
-replaceCard('Hier','synthese','Réponses au questionnaire','Source CSV FollowU · 1 diapositive.');
+// La fiche de réponses est désormais la première page d’Aujourd’hui ; aucun module Hier / 02.
 
 /* Effet de construction par mini-pixels, page par page.
    Ne s'applique jamais aux documents, ni à leur ouverture ou fermeture. */

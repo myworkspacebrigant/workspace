@@ -19,9 +19,9 @@ Ce site est installé dans le sous-dossier `weadvize-j4` pour ne pas modifier le
 - **ATELIER**
   - Hier — Page web fake test : en attente du support
   - Hier : en attente du support
-  - Aujourd’hui — Programme pédagogique IA : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
+  - Aujourd’hui / 03 : fiche des réponses CSV FollowU puis programme pédagogique IA, soit 2 diapositives navigables par clic ou flèches.
   - Demain — Programme pédagogique Julien : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
-  - Analyse / 05 : **FollowU, analyse comparative Aujourd’hui vs Demain**, en une slide 16:9 SVG reprenant le visuel de référence.
+  - Analyse / 05 : analyse comparative FollowU « Aujourd’hui vs Demain », une diapositive 16:9.
 
 ## Présentation à l’écran
 
@@ -49,3 +49,7 @@ La charte FollowU est conservée dans les fichiers eux-mêmes ; aucun autre docu
 ## Analyse / 05 et mini-pixels (novembre 2026)
 
 La slide `assets/analyse-followu.svg` reproduit en SVG le visuel FollowU fourni : aujourd'hui IA seule / humain seul, demain modèle hybride IA + humain. Cette adaptation vectorielle permet de conserver la netteté sur un écran de projection. L'animation d'apparition des éléments du workspace a été renforcée (davantage de pixels et apparition plus différenciée). L'ouverture et la fermeture des fichiers restent instantanées, sans animation.
+
+## Réorganisation du parcours (15 novembre 2026)
+
+Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demain / 04 et Analyse / 05. Le module Hier / 02 a été retiré de la navigation. Son contenu est la **première diapositive d’Aujourd’hui**, avant le programme pédagogique IA existant. Un clic sur la slide ou les flèches du clavier permet d’alterner ces deux pages. Analyse / 05 conserve la comparaison FollowU en un écran, sans animation d'ouverture ni de fermeture.
