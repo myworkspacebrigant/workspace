@@ -58,3 +58,7 @@ Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demai
 
 - BRIEF / 01, sommaire : le texte « Fichier sur le dossier de présentation » est remplacé par « Ma société de conseil WeAdvize est missionnée par le centre de formation FollowU pour optimiser l'intégration IA à la conception de ses programmes pédagogiques » ; le reste du contenu est conservé.
 - ATELIER : Hier, Aujourd’hui et Demain occupent désormais trois blocs de largeur égale sur la première ligne ; Analyse est placé sur une ligne entière sous les trois étapes. Adaptation responsive conservée.
+
+## Lien vérifiable vers le sommaire corrigé
+
+Le fichier autonome [Sommaire atelier J4 corrigé](assets/sommaire-atelier-j4-corrige.html) reprend le sommaire visible dans BRIEF / 01 avec la nouvelle mission WeAdvize–FollowU et la mention « Fin de module 3 ». Le sommaire est également intégré dans le visualiseur de `index.html`. Les trois cartes Hier, Aujourd'hui, Demain sont de largeur égale en navigation ATELIER, Analyse occupant la largeur de la deuxième ligne.
