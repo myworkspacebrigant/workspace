@@ -21,7 +21,7 @@ Ce site est installé dans le sous-dossier `weadvize-j4` pour ne pas modifier le
   - Hier : en attente du support
   - Aujourd’hui — Programme pédagogique IA : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
   - Demain — Programme pédagogique Julien : diapositive FollowU 16:9 issue du PowerPoint, avec original PPTX téléchargeable dans `assets/`
-  - Analyse : en attente du support
+  - Analyse / 05 : **FollowU, analyse comparative Aujourd’hui vs Demain**, en une slide 16:9 SVG reprenant le visuel de référence.
 
 ## Présentation à l’écran
 
@@ -45,3 +45,7 @@ Ajouter les supports manquants ultérieurement sans modifier l’arborescence d�
 - **DEMAIN / 04 — Programme pédagogique Julien (6 h, 1 slide)** : [Télécharger le PPTX](assets/programme-pedagogique-julien-followu-1-slide.pptx) ; [aperçu](assets/programme-pedagogique-julien-followu-1-slide.webp)
 
 La charte FollowU est conservée dans les fichiers eux-mêmes ; aucun autre document n'a été remplacé.
+
+## Analyse / 05 et mini-pixels (novembre 2026)
+
+La slide `assets/analyse-followu.svg` reproduit en SVG le visuel FollowU fourni : aujourd'hui IA seule / humain seul, demain modèle hybride IA + humain. Cette adaptation vectorielle permet de conserver la netteté sur un écran de projection. L'animation d'apparition des éléments du workspace a été renforcée (davantage de pixels et apparition plus différenciée). L'ouverture et la fermeture des fichiers restent instantanées, sans animation.

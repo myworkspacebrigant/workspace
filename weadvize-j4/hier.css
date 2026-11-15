@@ -44,7 +44,7 @@
 /* Apparitions nettes et successives des éléments des pages Workspace, jamais du visualiseur. */
 .screen.active{animation:none!important}
 .ui-pixel-target{position:relative}
-.ui-pixel-animate{animation:ui-pixel-compose .62s steps(11,end) both;animation-delay:var(--ui-enter-delay,0ms)}
+.ui-pixel-animate{animation:ui-pixel-compose .92s steps(13,end) both;animation-delay:var(--ui-enter-delay,0ms)}
 @keyframes ui-pixel-compose{
   0%{opacity:0;clip-path:inset(0 95% 0 0);filter:blur(5px);transform:translateY(9px)}
   35%{opacity:.72;clip-path:inset(0 55% 0 0);filter:blur(2px);transform:translateY(5px)}
@@ -53,16 +53,20 @@
 }
 .ui-pixel-cloud{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;display:block;contain:paint}
 .ui-pixel-point{display:block;position:absolute;width:var(--point-size,4px);height:var(--point-size,4px);background:var(--point-color,#f45b26);opacity:0;
- animation:ui-pixel-spark .5s steps(5,end) both;
+ animation:ui-pixel-spark .85s steps(7,end) both;
  animation-delay:calc(var(--ui-enter-delay,0ms) + var(--point-delay,0ms))}
 @keyframes ui-pixel-spark{
-  0%{opacity:0;transform:translate(-15px,8px) scale(.4)}
-  38%{opacity:1;transform:translate(-4px,2px) scale(1)}
-  72%{opacity:.7;transform:translate(0,0) scale(.9)}
-  100%{opacity:0;transform:translate(5px,-3px) scale(.2)}
+  0%{opacity:0;transform:translate(-34px,19px) scale(.1)}
+  30%{opacity:1;transform:translate(-9px,6px) scale(1.3)}
+  68%{opacity:.88;transform:translate(0,0) scale(1)}
+  100%{opacity:0;transform:translate(13px,-9px) scale(.12)}
 }
 @media(prefers-reduced-motion:reduce){
  .ui-pixel-animate,.ui-pixel-point{animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important}
  .ui-pixel-cloud{display:none!important}
 }
 .asset-full{width:1600px;height:900px;display:flex;align-items:center;justify-content:center;background:#fff}.asset-full img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Renforcement des mini-pixels, sans toucher au visualiseur des documents. */
+.ui-pixel-cloud{mix-blend-mode:multiply}
+.ui-pixel-point:nth-child(3n){border-radius:1px;box-shadow:0 0 0 1px rgba(244,91,38,.12)}

@@ -17,13 +17,13 @@
 <button class="card" data-doc="sommaire"><span class="cardtop"><span class="n">DOCUMENT 01</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Sommaire atelier J4</h2><p>Contexte et cas pratique · 1 page.</p></span><span class="goto">↗</span></span></button>
 <button class="card" data-doc="deroule"><span class="cardtop"><span class="n">DOCUMENT 02</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Déroulé pédagogique J4</h2><p>Quatre parties pédagogiques · 2 diapositives.</p></span><span class="goto">↗</span></span></button>
 </div></section>
-<section class="screen" id="screen-atelier"><div class="section-heading section-top"><div><div class="eyebrow">Workspace / ATELIER</div><h1>Hier. Aujourd’hui. Demain.</h1><p>Parcours et documents pédagogiques de l’atelier J4.</p></div><span class="section-count">4 supports disponibles · 1 à compléter</span></div>
+<section class="screen" id="screen-atelier"><div class="section-heading section-top"><div><div class="eyebrow">Workspace / ATELIER</div><h1>Hier. Aujourd’hui. Demain.</h1><p>Parcours et documents pédagogiques de l’atelier J4.</p></div><span class="section-count">5 supports disponibles</span></div>
 <div class="cards atelier">
 <button class="card" data-missing="Page web fake test" data-parent="atelier"><span class="cardtop"><span class="n">HIER / 01</span><span class="state">À compléter</span></span><span class="cardbottom"><span><h2>Page web fake test</h2><p>Support en attente.</p></span><span class="goto">↗</span></span></button>
 <button class="card" data-missing="Hier" data-parent="atelier"><span class="cardtop"><span class="n">HIER / 02</span><span class="state">À compléter</span></span><span class="cardbottom"><span><h2>Hier</h2><p>Support en attente.</p></span><span class="goto">↗</span></span></button>
 <button class="card" data-doc="ia"><span class="cardtop"><span class="n">AUJOURD’HUI / 03</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Aujourd’hui</h2><p>Programme pédagogique IA · 7 heures · 1 slide.</p></span><span class="goto">↗</span></span></button>
 <button class="card wide" data-doc="julien"><span class="cardtop"><span class="n">DEMAIN / 04</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Demain</h2><p>Programme pédagogique Julien · 6 heures · 1 slide.</p></span><span class="goto">↗</span></span></button>
-<button class="card" data-missing="Analyse" data-parent="atelier"><span class="cardtop"><span class="n">ANALYSE / 05</span><span class="state">À compléter</span></span><span class="cardbottom"><span><h2>Analyse</h2><p>Support en attente.</p></span><span class="goto">↗</span></span></button>
+<button class="card" data-doc="analyse"><span class="cardtop"><span class="n">ANALYSE / 05</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Analyse</h2><p>IA seule · Humain seul · Modèle hybride · 1 slide.</p></span><span class="goto">↗</span></span></button>
 </div></section>
 <section class="screen" id="screen-placeholder"><div class="section-heading"><div class="eyebrow">Workspace / Support à venir</div><h1 id="missing-title">Document à venir</h1><p>Le document sera intégré ici dès sa réception.</p></div><div class="placeholder-card"><div class="eyebrow">Emplacement réservé</div><h2>À compléter</h2><p>Ce support n’a pas encore été fourni.</p></div></section>
 <footer class="footer"><span>WEADVIZE · ATELIER J4</span><span>Présentation pédagogique — version 2026</span></footer></main></div>
@@ -68,12 +68,13 @@
 </template>
 <template id="tpl-ia"><div class="slide asset-full" aria-label="Programme pédagogique IA — FollowU, une diapositive 16:9, 7 heures"><img src="assets/programme-pedagogique-ia-followu-1-slide.webp" alt="Programme pédagogique IA — FollowU, une diapositive 16:9, 7 heures" draggable="false" decoding="async"></div></template>
 <template id="tpl-julien"><div class="slide asset-full" aria-label="Programme pédagogique Julien — FollowU, une diapositive 16:9, 6 heures"><img src="assets/programme-pedagogique-julien-followu-1-slide.webp" alt="Programme pédagogique Julien — FollowU, une diapositive 16:9, 6 heures" draggable="false" decoding="async"></div></template>
+<template id="tpl-analyse"><div class="slide asset-full" aria-label="FollowU — Analyse comparative : Aujourd’hui, IA seule et humain seul ; Demain, modèle IA + humain"><img src="assets/analyse-followu.svg" alt="Analyse comparative FollowU : aujourd’hui IA seule et humain seul, demain IA plus humain. Les outils accélèrent, la réflexion humaine apporte le sens et la qualité pédagogique." draggable="false" decoding="async"></div></template>
 <script src="hier.js"></script>
 <script>
 (function(){
 "use strict";
 var current="start",lastFolder="atelier",pageIndex=0,docPages=[];
-var routeDocs=["sommaire","deroule","ia","julien","followu","synthese"];
+var routeDocs=["sommaire","deroule","ia","julien","followu","synthese","analyse"];
 var stage=document.getElementById("stage");
 function fit(){
  var viewer=document.querySelector(".viewer-area");

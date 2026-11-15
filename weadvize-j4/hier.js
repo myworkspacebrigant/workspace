@@ -58,22 +58,22 @@ window.workspacePagePixels={
      '.cards > .card, .placeholder-card'
    ));
    targets.forEach(function(el,index){
-     const delay=Math.min(index*128,1200);
+     const delay=Math.min(index*185,1750);
      el.classList.add('ui-pixel-target');
      el.style.setProperty('--ui-enter-delay',delay+'ms');
      const cloud=document.createElement('span');
      cloud.className='ui-pixel-cloud';
      cloud.setAttribute('aria-hidden','true');
-     const count=el.classList.contains('card')||el.classList.contains('folder-main')?34:18;
+     const count=el.classList.contains('card')||el.classList.contains('folder-main')?92:48;
      for(let i=0;i<count;i++){
        const pixel=document.createElement('i');
        pixel.className='ui-pixel-point';
        // Positionnement déterministe : dispersé dans chaque composant, sans hasard visuel.
-       const x=(i*47+index*19)%99,y=(i*23+index*13)%94;
+       const x=(i*61+index*17)%99,y=(i*29+index*11)%95;
        pixel.style.left=x+'%';
        pixel.style.top=y+'%';
-       pixel.style.setProperty('--point-size',((i%3)+3)+'px');
-       pixel.style.setProperty('--point-delay',((i*29)%240)+'ms');
+       pixel.style.setProperty('--point-size',((i%5)+3)+'px');
+       pixel.style.setProperty('--point-delay',((i*37)%350)+'ms');
        pixel.style.setProperty('--point-color',(i%6===0?'#202327':i%4===0?'#c6cbd0':'#f45b26'));
        cloud.appendChild(pixel);
      }
