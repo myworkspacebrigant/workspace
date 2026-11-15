@@ -19,18 +19,19 @@
 @media(max-width:850px){.cards.atelier .analysis-wide{grid-column:span 1}.cards.atelier .card:not(.analysis-wide){min-height:175px}.cards.atelier .analysis-wide{min-height:170px}}
 
 
-/* WeAdvize : rebond du logo sur lui-même une fois toutes les 5 secondes. */
-.brand-bounce{display:inline-flex;align-items:center;justify-content:flex-start;white-space:nowrap;transform-origin:50% 85%;animation:brandBounceCycle 5s ease-in-out infinite}
-.brand-bounce .brand-label{display:block}
+/* WeAdvize : rebond visible immédiatement puis répété toutes les 5 secondes.
+   Anime les lettres, pas le bouton, sans modifier la mise en page. */
+.brand-bounce{position:relative;display:inline-flex;align-items:center;justify-content:flex-start;white-space:nowrap;overflow:visible}
+.brand-bounce .brand-label{display:block;transform-origin:50% 90%;animation:brandBounceCycle 5s linear infinite;will-change:transform}
 @keyframes brandBounceCycle{
-  0%,81%,100%{transform:translateY(0) scale(1)}
-  84%{transform:translateY(-9px) scale(1.045)}
-  88%{transform:translateY(0) scale(.985, .965)}
-  91%{transform:translateY(-4px) scale(1.015)}
-  94%{transform:translateY(0) scale(1.005, .99)}
-  97%{transform:translateY(0) scale(1)}
+  0%,1%{transform:translateY(0) scale(1,1)}
+  6%{transform:translateY(-13px) scale(1.055,.97)}
+  11%{transform:translateY(0) scale(1.075,.90)}
+  16%{transform:translateY(-7px) scale(1.025,.985)}
+  22%{transform:translateY(0) scale(1.025,.965)}
+  27%,100%{transform:translateY(0) scale(1,1)}
 }
-@media(prefers-reduced-motion:reduce){.brand-bounce{animation:none}}
+@media(prefers-reduced-motion:reduce){.brand-bounce .brand-label{animation:none;will-change:auto}}
 
 /* Lien quiz : visible exclusivement dans Aujourd'hui quand une URL validée a été fournie. */
 .today-quiz-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 18px;border:1px solid #d5d8de;
