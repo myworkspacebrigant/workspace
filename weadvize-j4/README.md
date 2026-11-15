@@ -62,3 +62,9 @@ Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demai
 ## Lien vérifiable vers le sommaire corrigé
 
 Le fichier autonome [Sommaire atelier J4 corrigé](assets/sommaire-atelier-j4-corrige.html) reprend le sommaire visible dans BRIEF / 01 avec la nouvelle mission WeAdvize–FollowU et la mention « Fin de module 3 ». Le sommaire est également intégré dans le visualiseur de `index.html`. Les trois cartes Hier, Aujourd'hui, Demain sont de largeur égale en navigation ATELIER, Analyse occupant la largeur de la deuxième ligne.
+
+## Logo loupe et quiz (15 novembre 2026)
+
+- Logo WeAdvize de la barre supérieure : passage d'une loupe toutes les **5 secondes** avec agrandissement localisé du lettrage. Le mouvement est désactivé lorsque l'utilisateur préfère des animations réduites.
+- Renumérotation sans changement des documents : **Hier / 01**, **Aujourd’hui / 02**, **Demain / 03**, **Analyse / 04**.
+- Emplacement du quiz mi-parcours SharePoint : sa présence est indiquée dans Aujourd'hui / 02. L'URL participant exacte n'était pas fournie ni retrouvable au moment de la mise à jour ; un lien n'est activé qu'en renseignant `window.WEADVIZE_QUIZ_SHAREPOINT_URL` en tête du script. Le visualiseur affiche alors un bouton « Quiz mi-parcours » uniquement dans Aujourd’hui / 02. Ne jamais utiliser de lien inventé.
