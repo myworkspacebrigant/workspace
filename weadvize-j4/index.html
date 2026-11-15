@@ -63,13 +63,13 @@
 <section class="screen" id="screen-atelier"><div class="section-heading section-top"><div><div class="eyebrow">Workspace / ATELIER</div><h1>Hier. Aujourd’hui. Demain.</h1><p>Parcours et documents pédagogiques de l’atelier J4.</p></div><span class="section-count">3 supports disponibles · 1 à compléter</span></div>
 <div class="cards atelier">
 <button class="card" data-missing="Page web fake test" data-parent="atelier"><span class="cardtop"><span class="n">HIER / 01</span><span class="state">À compléter</span></span><span class="cardbottom"><span><h2>Page web fake test</h2><p>Support en attente.</p></span><span class="goto">↗</span></span></button>
-<button class="card" data-doc="ia"><span class="cardtop"><span class="n">AUJOURD’HUI / 02</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Aujourd’hui</h2><p>Réponses au questionnaire + programme pédagogique IA · 2 slides. Quiz mi-parcours : lien SharePoint à renseigner.</p></span><span class="goto">↗</span></span></button>
+<button class="card" data-doc="ia"><span class="cardtop"><span class="n">AUJOURD’HUI / 02</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Aujourd’hui</h2><p>Réponses au questionnaire + programme pédagogique IA · 2 slides. Quiz mi-parcours Google Forms : lien à renseigner.</p></span><span class="goto">↗</span></span></button>
 <button class="card" data-doc="julien"><span class="cardtop"><span class="n">DEMAIN / 03</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Demain</h2><p>Programme pédagogique Julien · 6 heures · 1 slide.</p></span><span class="goto">↗</span></span></button>
 <button class="card analysis-wide" data-doc="analyse"><span class="cardtop"><span class="n">ANALYSE / 04</span><span class="state ready">Disponible</span></span><span class="cardbottom"><span><h2>Analyse</h2><p>Comparaison FollowU · IA seule, humain seul et méthode hybride · 1 slide.</p></span><span class="goto">↗</span></span></button>
 </div></section>
 <section class="screen" id="screen-placeholder"><div class="section-heading"><div class="eyebrow">Workspace / Support à venir</div><h1 id="missing-title">Document à venir</h1><p>Le document sera intégré ici dès sa réception.</p></div><div class="placeholder-card"><div class="eyebrow">Emplacement réservé</div><h2>À compléter</h2><p>Ce support n’a pas encore été fourni.</p></div></section>
 <footer class="footer"><span>WEADVIZE · ATELIER J4</span><span>Présentation pédagogique — version 2026</span></footer></main></div>
-<section id="reader" role="region" aria-label="Visualiseur plein écran"><div class="viewer-toolbar"><a id="today-quiz-link" class="today-quiz-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Quiz mi-parcours ↗</a><button id="reader-back" class="return-btn" type="button">← Retour</button></div><div class="viewer-area"><div class="stage" id="stage" tabindex="0"></div></div></section>
+<section id="reader" role="region" aria-label="Visualiseur plein écran"><div class="viewer-toolbar"><a id="today-quiz-link" class="today-quiz-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Quiz mi-parcours Google Forms ↗</a><button id="reader-back" class="return-btn" type="button">← Retour</button></div><div class="viewer-area"><div class="stage" id="stage" tabindex="0"></div></div></section>
 <template id="tpl-sommaire">
 <div class="slide sommaire">
 <div class="slide-topline"></div><div class="slide-leftmark"></div><div class="slide-topdash"></div><h1 class="slide-title">Atelier J4</h1><div class="slide-headerline"></div><div class="slide-bottomline"></div>
@@ -112,8 +112,8 @@
 <template id="tpl-julien"><div class="slide asset-full" aria-label="Programme pédagogique Julien — FollowU, une diapositive 16:9, 6 heures"><img src="assets/programme-pedagogique-julien-followu-1-slide.webp" alt="Programme pédagogique Julien — FollowU, une diapositive 16:9, 6 heures" draggable="false" decoding="async"></div></template>
 <template id="tpl-analyse"><div class="slide asset-full" aria-label="FollowU — Analyse comparative : Aujourd’hui, IA seule et humain seul ; Demain, modèle IA + humain"><img src="assets/analyse-followu.svg" alt="Analyse comparative FollowU : aujourd’hui IA seule et humain seul, demain IA plus humain. Les outils accélèrent, la réflexion humaine apporte le sens et la qualité pédagogique." draggable="false" decoding="async"></div></template>
 <script>
-/* Quiz mi-parcours : ne pas inventer d'URL. Définir l'adresse SharePoint exacte pour activer le bouton. */
-window.WEADVIZE_QUIZ_SHAREPOINT_URL = "";
+/* Quiz mi-parcours Google Forms. Renseigner l'URL exacte du formulaire participants pour activer le lien. */
+window.WEADVIZE_QUIZ_GOOGLE_FORMS_URL = "";
 </script>
 <script src="hier.js"></script>
 <script>
@@ -144,8 +144,11 @@ function route(name,push){
  document.querySelectorAll(".screen").forEach(function(e){e.classList.toggle("active",e.id==="screen-"+name)});
  document.getElementById("siteback").style.display=name==="start"?"none":"inline-block";
  var quizLink=document.getElementById("today-quiz-link");
- var quizURL=window.WEADVIZE_QUIZ_SHAREPOINT_URL;
- var validQuizURL=typeof quizURL==="string" && /^https:\/\//i.test(quizURL) && /(?:sharepoint\.com|forms\.office\.com|forms\.cloud\.microsoft)/i.test(quizURL);
+ var quizURL=window.WEADVIZE_QUIZ_GOOGLE_FORMS_URL;
+ var validQuizURL=false;
+ if(typeof quizURL==="string"){
+   try {var quizParsed=new URL(quizURL);validQuizURL=quizParsed.protocol==="https:" && ((quizParsed.hostname==="forms.gle") || (quizParsed.hostname==="docs.google.com" && quizParsed.pathname.indexOf("/forms/")===0));} catch(err){validQuizURL=false;}
+ }
  quizLink.hidden=!(isDoc && name==="ia" && validQuizURL);
  if(validQuizURL){quizLink.href=quizURL;}
  if(isDoc){
