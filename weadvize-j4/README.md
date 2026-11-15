@@ -53,3 +53,8 @@ La slide `assets/analyse-followu.svg` reproduit en SVG le visuel FollowU fourni 
 ## Réorganisation du parcours (15 novembre 2026)
 
 Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demain / 04 et Analyse / 05. Le module Hier / 02 a été retiré de la navigation. Son contenu est la **première diapositive d’Aujourd’hui**, avant le programme pédagogique IA existant. Un clic sur la slide ou les flèches du clavier permet d’alterner ces deux pages. Analyse / 05 conserve la comparaison FollowU en un écran, sans animation d'ouverture ni de fermeture.
+
+## Ajustement brief et parcours (15 novembre 2026)
+
+- BRIEF / 01, sommaire : le texte « Fichier sur le dossier de présentation » est remplacé par « Ma société de conseil WeAdvize est missionnée par le centre de formation FollowU pour optimiser l'intégration IA à la conception de ses programmes pédagogiques » ; le reste du contenu est conservé.
+- ATELIER : Hier, Aujourd’hui et Demain occupent désormais trois blocs de largeur égale sur la première ligne ; Analyse est placé sur une ligne entière sous les trois étapes. Adaptation responsive conservée.
