@@ -63,10 +63,10 @@ Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demai
 
 Le fichier autonome [Sommaire atelier J4 corrigé](assets/sommaire-atelier-j4-corrige.html) reprend le sommaire visible dans BRIEF / 01 avec la nouvelle mission WeAdvize–FollowU et la mention « Fin de module 3 ». Le sommaire est également intégré dans le visualiseur de `index.html`. Les trois cartes Hier, Aujourd'hui, Demain sont de largeur égale en navigation ATELIER, Analyse occupant la largeur de la deuxième ligne.
 
-## Logo loupe et questionnaire BRIG (16 novembre 2026)
+## Logo loupe et récolte du besoin commanditaire (16 novembre 2026)
 
 - Les modules et supports existants restent inchangés.
-- Dans **ATELIER → Aujourd’hui / 02**, la première étape précédemment consacrée au « Quiz mi-parcours Google Forms » ouvre désormais le **questionnaire BRIG – Entretien formation test** : https://brig-entretien-formation-test.wintrydaisy14.chatgpt.site
+- Dans **ATELIER → Aujourd’hui / 02**, la première étape intitulée **Récolte du besoin commanditaire** ouvre le **formulaire BRIG – Entretien formation test** : https://brig-entretien-formation-test.wintrydaisy14.chatgpt.site
 - Le lien apparaît dans le bouton de la première slide ainsi que dans le bandeau du visualiseur. Ouverture dans un nouvel onglet.
 - Étapes suivantes conservées : **2. Réponses au formulaire** et **3. Programme pédagogique IA**.
 - La vérification du lien dans le script limite l’hôte autorisé à `brig-entretien-formation-test.wintrydaisy14.chatgpt.site` en HTTPS.
