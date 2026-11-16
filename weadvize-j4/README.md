@@ -63,8 +63,11 @@ Le dossier ATELIER présente quatre modules : Hier / 01, Aujourd'hui / 03, Demai
 
 Le fichier autonome [Sommaire atelier J4 corrigé](assets/sommaire-atelier-j4-corrige.html) reprend le sommaire visible dans BRIEF / 01 avec la nouvelle mission WeAdvize–FollowU et la mention « Fin de module 3 ». Le sommaire est également intégré dans le visualiseur de `index.html`. Les trois cartes Hier, Aujourd'hui, Demain sont de largeur égale en navigation ATELIER, Analyse occupant la largeur de la deuxième ligne.
 
-## Logo loupe et quiz (15 novembre 2026)
+## Logo loupe et questionnaire BRIG (16 novembre 2026)
 
-- Logo WeAdvize de la barre supérieure : passage d'une loupe toutes les **5 secondes** avec agrandissement localisé du lettrage. Le mouvement est désactivé lorsque l'utilisateur préfère des animations réduites.
-- Renumérotation sans changement des documents : **Hier / 01**, **Aujourd’hui / 02**, **Demain / 03**, **Analyse / 04**.
-- Emplacement du quiz mi-parcours **Google Forms** dans Aujourd’hui / 02. Son URL participants exacte est à retrouver depuis le projet Google Apps Script avec `retrouverLiensIAMiParcours` → **Exécuter** → **Journal d’exécution**. Un bouton « Quiz mi-parcours Google Forms » n’est activé que lorsque `window.WEADVIZE_QUIZ_GOOGLE_FORMS_URL` reçoit cette URL (hébergeur forms.gle ou docs.google.com/forms). Aucun lien n’a été inventé.
+- Les modules et supports existants restent inchangés.
+- Dans **ATELIER → Aujourd’hui / 02**, la première étape précédemment consacrée au « Quiz mi-parcours Google Forms » ouvre désormais le **questionnaire BRIG – Entretien formation test** : https://brig-entretien-formation-test.wintrydaisy14.chatgpt.site
+- Le lien apparaît dans le bouton de la première slide ainsi que dans le bandeau du visualiseur. Ouverture dans un nouvel onglet.
+- Étapes suivantes conservées : **2. Réponses au formulaire** et **3. Programme pédagogique IA**.
+- La vérification du lien dans le script limite l’hôte autorisé à `brig-entretien-formation-test.wintrydaisy14.chatgpt.site` en HTTPS.
+- Le site externe n’est pas hébergé sur GitHub Pages : son accessibilité dépend de son propre hébergement.
